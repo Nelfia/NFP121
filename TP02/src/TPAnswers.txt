@@ -1,0 +1,11 @@
+EXERCICE 1: J'ai eu une erreur indiquant qu'il manquait un package pour importer les classes. Mon IDE IntelliJ Idea m'a
+tout de suite proposé d'importer les bons packages.
+
+EXERCICE 2:
+2.2. Une erreur est affichée. Elle vise la méthode testInitialisationMieux et indique que nous attendons un réel 1.0 et recevons 4.0
+dans le fichier PointTest.java ligne 42.
+Puis une seconde est affichée à la ligne suivante.
+(Je n'ai pas besoin d'utiliser la méthode main car IntelliJ me propose d'exécuter le programme dans un exécutable parallèle.)
+Après correction des valeurs attendues, les tests réussisent.
+
+EXERCICE 3:
