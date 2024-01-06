@@ -8,7 +8,7 @@ Consigne :  Ci-dessous, répondre à la place des « ... ».
 
 =====[ Temps ]==================================================================
 
-Temps passé sur la V1 : ... heures ... minutes
+Temps passé sur la V1 : ... heures ... minutes      Aucune idée, je l'ai fait en pointillés. Je dirai plus de 4heures.
 Temps passé sur la V2 : ... heures ... minutes
 Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
 Bien sûr, les temps renseignés ici ne sont pas pris en compte dans la notation.
@@ -26,13 +26,14 @@ Le Cercle UTILISE le Point => relation <<extends>>
 Comment est réalisée l'exigence E18 ?
 -------------------------------------
 
-En rendant les attributs du Cercle privés.
+En rendant les attributs du Cercle privés et en utilisant des copies des Points (passés en paramètre ou retournés par les méthodes)
+pour ne pas pouvoir modifier le Cercle en modifiant ces points.
 
 
 
 =====[ Explications ]===========================================================
 
-(Facultatif) Donner ici les explications supplémentaires utiles à la
-compréhension du travail rendu.
+Je n'ai pas réalisé les tests complémentaires car nous entamons une semaine d'examen avec plusieurs TP importants à rendre
+et des matières nécessitant un lourd travail. Je m'appliquerai d'avantage la prochaine fois.
 
 ...

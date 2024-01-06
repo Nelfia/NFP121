@@ -8,21 +8,20 @@ import java.awt.Color;
 class Cercle implements Mesurable2D {
 
     private final double PI = Math.PI;  // Constante PI
-    private double rayon;                // Rayon du Cercle
-    private double diametre;             // Diamètre du Cercle
+    private double rayon;               // Rayon du Cercle
+    private double diametre;            // Diamètre du Cercle
     private Color couleur;              // Couleur du Cercle
     private Point centre;               // Point au centre du Cercle
 
     /**
      * Méthode de classe qui retourne un Cercle construit à partir de son centre et d'un point situé sur son périmètre.
-     * @param centre point situé au centre du cercle
-     * @param extremite point situé sur la périphérie du cercle
-     * @return le Cercle créé à partir du centre et d'un Point sur sa périphérie.
+     * @param centre Point situé au centre du cercle
+     * @param extremite Point situé sur la périphérie du cercle
+     * @return instance de Cercle
      */
     public static Cercle creerCercle(Point centre, Point extremite) {
-        if(centre == null) centre = new Point(0,0);
-        else if (extremite == null) extremite = new Point(0,0);
-        return new Cercle(centre, centre.distance(extremite));
+        assert centre != null && extremite != null;
+        return new Cercle(centre, (centre.distance(extremite)));
     }
 
     /**
@@ -31,36 +30,53 @@ class Cercle implements Mesurable2D {
      * @param rayon rayon du Cercle
      */
     public Cercle(Point centre, double rayon) {
+        assert centre != null && rayon > 0;
+
         this.couleur = Color.blue;
-        this.centre = centre;
+        this.centre = new Point(centre.getX(), centre.getY());
         this.rayon = rayon;
+        this.diametre = rayon * 2;
     }
 
     /**
      * Construire un Cercle à partir de 2 points diamétralement opposés.
      *
-     * @param a Point extrémité du diamètre A
-     * @param b Point extrémité du diamètre B
+     * @param a this extrémité A
+     * @param b this extrémité B
      */
     public Cercle(Point a, Point b) {
+        assert a != null && b != null && (a.getX() != b.getX() && a.getY() != b.getY());
+
+        Point pointA = new Point(a.getX(), a.getY());
+        Point pointB = new Point(b.getX(), b.getY());
+        this.diametre = pointA.distance(pointB);
+        this.rayon = this.diametre / 2;
+        this.centre = new Point(((pointA.getX()+pointB.getX())/2), ((pointA.getY()+pointB.getY())/2));
         this.couleur = Color.blue;
-        if(a != null && b!= null){
-            this.diametre = a.distance(b);
-            this.rayon = this.diametre/2;
-            this.centre.setX(a.getX() + this.rayon);
-            this.centre.setY(a.getY() + this.rayon);
-        }
     }
 
     /**
      * Construire un cercle à partir de 2 points diamétralement opposés et de sa couleur.
-     * @param a Point extrémité du diamètre A
-     * @param b Point extrémité du diamètre B
-     * @param couleur couleur du cercle
+     * @param a this extrémité A
+     * @param b this extrémité B
+     * @param couleur this couleur
      */
     public Cercle(Point a, Point b, Color couleur) {
-        if(a != null && b!= null) new Cercle(a,b);
-        if(couleur != null) this.couleur = couleur;
+        this(a, b);
+        assert couleur != null;
+        this.couleur = couleur;
+    }
+
+    /**
+     * Affiche un Cercle sous forme d'une string.
+     * @return description du Cercle
+     */
+    @Override
+    public String toString() {
+        return  "C" + rayon +
+                "@(" + centre.getX() +
+                ", " + centre.getY() +
+                ')';
     }
 
     /**
@@ -68,6 +84,8 @@ class Cercle implements Mesurable2D {
      * @param rayon nouveau rayon.
      */
     public void setRayon(double rayon) {
+        assert rayon > 0;
+
         this.rayon = rayon;
         this.diametre = rayon * 2;
     }
@@ -77,6 +95,8 @@ class Cercle implements Mesurable2D {
      * @param diametre nouveau diamètre
      */
     public void setDiametre(double diametre) {
+        assert diametre > 0;
+
         this.diametre = diametre;
         this.rayon = diametre / 2;
     }
@@ -86,6 +106,8 @@ class Cercle implements Mesurable2D {
      * @param couleur nouvelle couleur du cercle.
      */
     public void setCouleur(Color couleur) {
+        assert couleur != null;
+
         this.couleur = couleur;
     }
 
@@ -94,7 +116,7 @@ class Cercle implements Mesurable2D {
      * @return la couleur du Cercle.
      */
     public Color getCouleur() {
-        return couleur;
+        return this.couleur;
     }
 
     /**
@@ -102,7 +124,7 @@ class Cercle implements Mesurable2D {
      * @return Le diacmètre du Cercle.
      */
     public double getDiametre() {
-        return diametre;
+        return this.diametre;
     }
 
     /**
@@ -110,7 +132,7 @@ class Cercle implements Mesurable2D {
      * @return Rayon du Cercle.
      */
     public double getRayon() {
-        return rayon;
+        return this.rayon;
     }
 
     /**
@@ -118,7 +140,7 @@ class Cercle implements Mesurable2D {
      * @return Point centre du Cercle.
      */
     public Point getCentre() {
-        return centre;
+        return new Point(this.centre.getX(), this.centre.getY());
     }
 
     /**
@@ -127,7 +149,8 @@ class Cercle implements Mesurable2D {
      * @return true si le Point est à l'intérieur ou sur le cercle, false s'il est à l'extérieur.
      */
     public boolean contient(Point point) {
-        if(point == null) point = new Point(0,0);
+        assert point != null;
+
         return point.distance(this.centre) <= this.rayon;
     }
 
