@@ -46,14 +46,14 @@ public class CercleTest {
     }
     @Test public void testeE13() {
         assertEquals("E13: Initialisation de la couleur de C2 incorrecte", Color.black, C2.getCouleur());
-        memesCoordonnees("E12: centre de C2 incorrect", new Point(0.5,1.0), C2.getCentre());
+        memesCoordonnees("E13: centre de C2 incorrect", new Point(0.5,1.0), C2.getCentre());
         assertEquals("E13: Initialisation du diamètre de C2 incorrecte", A.distance(C), C2.getDiametre(), EPSILON);
         assertEquals("E13: Initialisation du rayon de C2 incorrecte", A.distance(C)/2, C2.getRayon(), EPSILON);
     }
     @Test public void testeE14() {
-        assertEquals("E13: Initialisation de la couleur de C3 incorrecte", Color.blue, C3.getCouleur());
-        memesCoordonnees("E12: centre de C3 incorrect", C, C3.getCentre());
-        assertEquals("E13: Initialisation du diamètre de C3 incorrecte", C.distance(D)*2, C3.getDiametre(), EPSILON);
-        assertEquals("E13: Initialisation du rayon de C3 incorrecte", C.distance(D), C3.getRayon(), EPSILON);
+        assertEquals("E14: Initialisation de la couleur de C3 incorrecte", Color.blue, C3.getCouleur());
+        memesCoordonnees("E14: centre de C3 incorrect", C, C3.getCentre());
+        assertEquals("E14: Initialisation du diamètre de C3 incorrecte", C.distance(D)*2, C3.getDiametre(), EPSILON);
+        assertEquals("E14: Initialisation du rayon de C3 incorrecte", C.distance(D), C3.getRayon(), EPSILON);
     }
 }
