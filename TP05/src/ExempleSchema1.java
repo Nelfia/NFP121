@@ -59,10 +59,10 @@ public class ExempleSchema1 {
 
 		// Afficher le schéma au format SVG dans un fichier
 		AfficheurSVG afficheurSVG = new AfficheurSVG("afficheurSVG", "affiche l'exempleSchema du TP05", 600, 400);
-		afficheurSVG.dessinerLigne(p1.getX(), p1.getY(), p2.getX(), p2.getY(), s12.getCouleur());
-		afficheurSVG.dessinerLigne(p2.getX(), p2.getY(), p3.getX(), p3.getY(), s23.getCouleur());
-		afficheurSVG.dessinerLigne(p3.getX(), p3.getY(), p1.getX(), p1.getY(), s31.getCouleur());
-		afficheurSVG.dessinerPoint(barycentre.getX(), barycentre.getY(), barycentre.getCouleur());
+		s12.dessiner(afficheurSVG);
+		s23.dessiner(afficheurSVG);
+		s31.dessiner(afficheurSVG);
+		barycentre.dessiner(afficheurSVG);
 		afficheurSVG.ecrire("schema.svg");
 
 		// Créer un Point et une Ligne
