@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!-- Car l'axe des Y est inversé en SVG les y sont transformés en 10 - y
+     Toutes les coordonnées sont * 10
+-->
+<svg xmlns='http://www.w3.org/2000/svg' version="11" width="600" height="400">
+	<title>afficheurSVG</title>
+	<desc>affiche l'exempleSchema du TP05</desc>
+	<line x1="70" y1="110" x2="100" y2="40" stroke="rgb(0,255,0)"/>
+	<line x1="100" y1="40" x2="150" y2="90" stroke="rgb(0,255,0)"/>
+	<line x1="150" y1="90" x2="70" y2="110" stroke="rgb(0,255,0)"/>
+	<circle cx="106" cy="80" r="2" fill="rgb(0,255,0)"/>
+</svg>
