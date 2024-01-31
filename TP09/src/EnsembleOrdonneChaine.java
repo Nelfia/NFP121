@@ -1,10 +1,10 @@
-public class EnsembleChaine implements Ensemble{
+public class EnsembleOrdonneChaine implements EnsembleOrdonne {
 
     private final Cellule premiereCellule;
     private Cellule derniereCelluleInseree;
     private int size = 0;
 
-    public EnsembleChaine() {
+    public EnsembleOrdonneChaine() {
         this.premiereCellule = new Cellule(0);
     }
 
@@ -112,10 +112,23 @@ public class EnsembleChaine implements Ensemble{
         }
     }
 
+    @Override
+    public int min() {
+        assert this.premiereCellule.getCelluleSuivante() != null;
+        double min = Integer.MAX_VALUE;
+        Cellule celluleEnCours = this.premiereCellule.getCelluleSuivante();
+        for(int i = 0; i < this.cardinal(); i++){
+            if (celluleEnCours.getValeur() < min) min = celluleEnCours.getValeur();
+            celluleEnCours = celluleEnCours.getCelluleSuivante();
+        }
+        return (int) min;
+    }
+
     public static void main(String[] args) {
-        EnsembleChaine eC = new EnsembleChaine();
-        eC.ajouterTous(10,18,15,-5);
+        EnsembleOrdonneChaine eC = new EnsembleOrdonneChaine();
+        eC.ajouterTous(10,18,15,-5, -15);
         System.out.println("contient:" + eC.contient(10));
+        System.out.println("min : " + eC.min());
         System.out.println(eC.getCellule(-5));
         eC.supprimer(10);
         System.out.println("contient:" + eC.contient(10));
