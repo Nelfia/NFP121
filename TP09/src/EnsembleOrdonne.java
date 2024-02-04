@@ -5,5 +5,4 @@ public interface EnsembleOrdonne<T> extends Ensemble<T> {
 	 * @return la valeur la plus petite  */
 	/*@ pure helper @*/ T getMin();
 
-
 }

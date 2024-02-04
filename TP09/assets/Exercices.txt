@@ -1,0 +1,7 @@
+Exercice 4:
+  4.1: L'implémentation Ensemble est très efficace car elle est toujours définissable et prend uniquement la place dont elle a besoin.
+  L'implémentation Ensemble Ordonné générique nécessite l'implémentation de l'interface Comparable à l'objet que l'on souhaite ordonner
+  dans l'ensemble. Il faudra également définir la méthode qui lui est associée pour pouvoir ordonner correctement les objets.
+  4.2: Côté utilisateur, il n'y a aucune différence et les deux implémentations sont efficaces.
+  En revanche, un tableau nécessiterai de prévoir une capacité qui peut évoluer en fonction des éléments qui lui sont ajoutés.
+  Dans ces implémentations, on ajoute un élément qui prend la place dont il a besoin au fur et à mesure.
