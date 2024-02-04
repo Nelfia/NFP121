@@ -1,8 +1,8 @@
-public class Cellule {
-    private int valeur;
-    private Cellule celluleSuivante;
+public class Cellule<T> {
+    private T valeur;
+    private Cellule<T> celluleSuivante;
 
-    public Cellule(int valeur) {
+    public Cellule(T valeur) {
         this.valeur = valeur;
     }
 
@@ -14,19 +14,19 @@ public class Cellule {
                 ']';
     }
 
-    public int getValeur() {
+    public T getValeur() {
         return this.valeur;
     }
 
-    public void setValeur(int valeur) {
+    public void setValeur(T valeur) {
         this.valeur = valeur;
     }
 
-    public Cellule getCelluleSuivante() {
+    public Cellule<T> getCelluleSuivante() {
         return celluleSuivante;
     }
 
-    public void setCelluleSuivante(Cellule celluleSuivante) {
+    public void setCelluleSuivante(Cellule<T> celluleSuivante) {
         this.celluleSuivante = celluleSuivante;
     }
 }
