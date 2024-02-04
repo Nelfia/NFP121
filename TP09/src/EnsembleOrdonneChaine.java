@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class EnsembleOrdonneChaine implements EnsembleOrdonne {
 
     private final Cellule premiereCellule;
@@ -8,9 +10,10 @@ public class EnsembleOrdonneChaine implements EnsembleOrdonne {
         this.premiereCellule = new Cellule(0);
     }
 
-    public void ajouterTous(int... nombres) {
-        for(int n: nombres){
-            Cellule cellule = new Cellule(n);
+    public void ajouterTous(int... elements) {
+        Arrays.sort(elements);
+        for(int e: elements){
+            Cellule cellule = new Cellule(e);
             if(this.premiereCellule.getCelluleSuivante() == null) {
                 this.premiereCellule.setCelluleSuivante(cellule);
             }
@@ -20,15 +23,12 @@ public class EnsembleOrdonneChaine implements EnsembleOrdonne {
             this.derniereCelluleInseree = cellule;
             this.size++ ;
         }
-        System.out.println(this);
-
     }
 
     @Override
     public String toString() {
         StringBuilder listeStr = new StringBuilder();
         Cellule celluleEnCours = this.premiereCellule.getCelluleSuivante();
-        System.out.println(celluleEnCours);
 
         for(int i = 0; i < size; i++){
             listeStr.append(celluleEnCours.getValeur());
@@ -51,95 +51,69 @@ public class EnsembleOrdonneChaine implements EnsembleOrdonne {
         return this.size == 0;
     }
 
-    /**
-     * Vérifie la présence d'une cellule contenant la valeur passée en paramètre
-     * @param x valeur de l'élément recherché
-     * @return TRUE si une cellule contient la valeur, sinon FALSE.
-     */
     @Override
     public boolean contient(int x) {
-        return this.getCellule(x) != null;
+        if(x < this.getMin()) return false;
+        Cellule c = this.premiereCellule.getCelluleSuivante();
+        while (true){
+            if(c.getValeur() == x) return true;
+            if(c.getCelluleSuivante() == null) return false;
+            c = c.getCelluleSuivante();
+        }
     }
 
-    /**
-     * Ajoute une cellule à la fin de l'ensemble
-     * @param x valeur de la cellule
-     */
     @Override
     public void ajouter(int x) {
         if(this.contient(x)) return;
-        Cellule cellule = new Cellule(x);
-        if(this.premiereCellule.getCelluleSuivante() == null) this.premiereCellule.setCelluleSuivante(cellule);
-        else this.derniereCelluleInseree.setCelluleSuivante(cellule);
-        this.derniereCelluleInseree = cellule;
-        size++;
-        System.out.println("ajouter" + this);
+        Cellule c = this.premiereCellule.getCelluleSuivante();
+        int temp;
+        while (true){
+            if (x <= c.getValeur()) {
+                temp = c.getValeur();
+                c.setValeur(x);
+                x = temp;
+                if (c.getCelluleSuivante() == null) {
+                    Cellule nc = new Cellule(x);
+                    c.setCelluleSuivante(nc);
+                    this.size++;
+                    return;
+                }
+            }
+            c = c.getCelluleSuivante();
+        }
     }
 
-    /**
-     * Supprime toutes les Cellules dont la valeur est égale à celle passée en paramètre
-     * @param x l'élément à supprimer
-     */
     @Override
     public void supprimer(int x) {
-        if(this.contient(x)) {
-            Cellule celluleprecedente = this.premiereCellule;
-            Cellule celluleEnCours = this.premiereCellule.getCelluleSuivante();
-            while (true) {
-                if( celluleEnCours.getValeur() == x) {
-                    if(celluleEnCours.getCelluleSuivante() != null) celluleprecedente.setCelluleSuivante(celluleEnCours.getCelluleSuivante());
-                    else celluleprecedente.setCelluleSuivante(null);
-                    this.size--;
-                }
-                if( celluleEnCours.getCelluleSuivante() == null) break;
-                celluleprecedente = celluleEnCours;
-                celluleEnCours = celluleEnCours.getCelluleSuivante();
-            }
-        }
-    }
-
-    /**
-     * Récupère la première cellule de l'ensemble dont la valeur correspond à celle recherchée.
-     * @param x valeur cherchée
-     */
-    public Cellule getCellule(int x) {
-        Cellule celluleEnCours = this.premiereCellule;
+        if(!this.contient(x)) return;
+        Cellule c = this.premiereCellule;
         while (true) {
-            if(celluleEnCours.getCelluleSuivante() == null) return null;
-            celluleEnCours = celluleEnCours.getCelluleSuivante();
-            if (celluleEnCours.getValeur() == x) return celluleEnCours;
-            if (celluleEnCours.getCelluleSuivante() == null) return null;
+            if(c.getCelluleSuivante().getValeur() == x) {
+                if(c.getCelluleSuivante().getCelluleSuivante() == null) c.setCelluleSuivante(null);
+                c.setCelluleSuivante(c.getCelluleSuivante().getCelluleSuivante());
+                this.size--;
+                return;
+            }
+            c = c.getCelluleSuivante();
         }
     }
 
     @Override
-    public int min() {
-        assert this.premiereCellule.getCelluleSuivante() != null;
-        double min = Integer.MAX_VALUE;
-        Cellule celluleEnCours = this.premiereCellule.getCelluleSuivante();
-        for(int i = 0; i < this.cardinal(); i++){
-            if (celluleEnCours.getValeur() < min) min = celluleEnCours.getValeur();
-            celluleEnCours = celluleEnCours.getCelluleSuivante();
-        }
-        return (int) min;
+    public int getMin() {
+        return this.premiereCellule.getCelluleSuivante().getValeur();
     }
 
     public static void main(String[] args) {
         EnsembleOrdonneChaine eC = new EnsembleOrdonneChaine();
         eC.ajouterTous(10,18,15,-5, -15);
-        System.out.println("contient:" + eC.contient(10));
-        System.out.println("min : " + eC.min());
-        System.out.println(eC.getCellule(-5));
-        eC.supprimer(10);
-        System.out.println("contient:" + eC.contient(10));
-        System.out.println("contient:" + eC.contient(-5));
-        System.out.println("contient:" + eC.contient(15));
-        System.out.println(eC);
-        eC.supprimer(-5);
         System.out.println(eC);
         System.out.println("contient:" + eC.contient(10));
-        System.out.println("contient:" + eC.contient(-5));
-        System.out.println("contient:" + eC.contient(15));
-
+        eC.ajouter(4);
+        System.out.println(eC);
+        System.out.println(eC.contient(18));
+        eC.supprimer(4);
+        System.out.println(eC);
+        System.out.println(eC.contient(4));
+        System.out.println(eC.getMin());
     }
 }
