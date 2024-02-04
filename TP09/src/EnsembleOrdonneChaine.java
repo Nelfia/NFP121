@@ -21,7 +21,7 @@ public class EnsembleOrdonneChaine implements EnsembleOrdonne {
                 this.derniereCelluleInseree.setCelluleSuivante(cellule);
             }
             this.derniereCelluleInseree = cellule;
-            this.size++ ;
+            this.size++;
         }
     }
 
@@ -53,44 +53,58 @@ public class EnsembleOrdonneChaine implements EnsembleOrdonne {
 
     @Override
     public boolean contient(int x) {
-        if(x < this.getMin()) return false;
-        Cellule c = this.premiereCellule.getCelluleSuivante();
-        while (true){
-            if(c.getValeur() == x) return true;
-            if(c.getCelluleSuivante() == null) return false;
-            c = c.getCelluleSuivante();
+        if(!this.estVide()) {
+            if (x < this.getMin()) return false;
+            Cellule c = this.premiereCellule.getCelluleSuivante();
+            while (true) {
+                if (c.getValeur() == x) return true;
+                if (c.getCelluleSuivante() == null) return false;
+                c = c.getCelluleSuivante();
+            }
         }
+        return false;
     }
 
     @Override
     public void ajouter(int x) {
-        if(this.contient(x)) return;
-        Cellule c = this.premiereCellule.getCelluleSuivante();
-        int temp;
-        while (true){
-            if (x <= c.getValeur()) {
-                temp = c.getValeur();
-                c.setValeur(x);
-                x = temp;
-                if (c.getCelluleSuivante() == null) {
-                    Cellule nc = new Cellule(x);
-                    c.setCelluleSuivante(nc);
+        if(!this.contient(x)){
+            Cellule c = this.premiereCellule;
+            int temp;
+            if(this.estVide()) {
+                c.setCelluleSuivante(new Cellule(x));
+                this.size++;
+                return;
+            }
+            c = c.getCelluleSuivante();
+            while (true){
+                if (x <= c.getValeur()) {
+                    temp = c.getValeur();
+                    c.setValeur(x);
+                    x = temp;
+                    if (c.getCelluleSuivante() == null) {
+                        c.setCelluleSuivante(new Cellule(x));
+                        this.size++;
+                        return;
+                    }
+                }
+                if(c.getCelluleSuivante() ==null) {
+                    c.setCelluleSuivante(new Cellule(x));
                     this.size++;
                     return;
                 }
+                c = c.getCelluleSuivante();
             }
-            c = c.getCelluleSuivante();
         }
     }
 
     @Override
     public void supprimer(int x) {
-        if(!this.contient(x)) return;
+        if(!this.contient(x) || this.estVide()) return;
         Cellule c = this.premiereCellule;
         while (true) {
             if(c.getCelluleSuivante().getValeur() == x) {
                 if(c.getCelluleSuivante().getCelluleSuivante() == null) c.setCelluleSuivante(null);
-                c.setCelluleSuivante(c.getCelluleSuivante().getCelluleSuivante());
+                else c.setCelluleSuivante(c.getCelluleSuivante().getCelluleSuivante());
                 this.size--;
                 return;
             }
@@ -100,20 +114,12 @@ public class EnsembleOrdonneChaine implements EnsembleOrdonne {
 
     @Override
     public int getMin() {
+        assert !this.estVide();
         return this.premiereCellule.getCelluleSuivante().getValeur();
     }
 
     public static void main(String[] args) {
         EnsembleOrdonneChaine eC = new EnsembleOrdonneChaine();
-        eC.ajouterTous(10,18,15,-5, -15);
-        System.out.println(eC);
-        System.out.println("contient:" + eC.contient(10));
-        eC.ajouter(4);
-        System.out.println(eC);
-        System.out.println(eC.contient(18));
-        eC.supprimer(4);
-        System.out.println(eC);
-        System.out.println(eC.contient(4));
-        System.out.println(eC.getMin());
+        System.out.println(eC.estVide());
     }
 }
