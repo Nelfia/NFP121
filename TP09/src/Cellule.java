@@ -1,4 +1,4 @@
-public class Cellule<T> {
+public class Cellule<T> implements Comparable<T> {
     private T valeur;
     private Cellule<T> celluleSuivante;
 
@@ -28,5 +28,13 @@ public class Cellule<T> {
 
     public void setCelluleSuivante(Cellule<T> celluleSuivante) {
         this.celluleSuivante = celluleSuivante;
+    }
+
+    @Override
+    public int compareTo(T o) {
+        int compareToInteger = (int) o;
+        if((Integer) this.valeur == compareToInteger) return 0;
+        if((Integer) this.valeur > compareToInteger) return 1;
+        return -1;
     }
 }

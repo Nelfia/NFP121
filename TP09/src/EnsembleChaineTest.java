@@ -4,7 +4,7 @@
 public class EnsembleChaineTest extends EnsembleTestAbstrait {
 
 	protected Ensemble<Integer> nouvelEnsemble(int capacite) {
-		return new EnsembleChaine<>();
+		return new EnsembleOrdonneChaine<>();
 	}
 
 }
