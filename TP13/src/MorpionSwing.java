@@ -152,12 +152,10 @@ public class MorpionSwing {
 	/** Déclenche la demande de nouvelle partie. */
 	public void actionNouvellePartie(ActionEvent ev) {
 		this.recommencer();
-		System.out.println("Nouvelle Partie");
 	}
 
 	/** Déclenche l'action de quitter. */
 	public void actionQuitter(ActionEvent ev) {
-		System.out.println("Quitter");
 		this.fenetre.dispose();
 	}
 
@@ -173,13 +171,13 @@ public class MorpionSwing {
 				this.modele.cocher(i, j);
 
 				if (modele.estGagnee())			// Si la partie est gagnée
-					System.out.println("Le joueur " + this.joueur.getIcon().toString() + " a gagné.");
+					JOptionPane.showMessageDialog(fenetre, this.modele.getJoueur() + " a gagné.");
 				else if (modele.estTerminee())	// Si la partie est terminée
-					System.out.println("MATCH NULL !");
+					JOptionPane.showMessageDialog(fenetre, "Match nul. La partie est terminée.");
 				else
 					this.joueur.setIcon(images.get(modele.getJoueur()));
 			} catch (CaseOccupeeException e) {
-				System.out.println(e.getMessage());
+				JOptionPane.showMessageDialog(fenetre, e.getMessage());
 			}
 		}
 	}
