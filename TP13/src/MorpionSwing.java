@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 
 /** Programmation d'un jeu de Morpion avec une interface graphique Swing.
@@ -72,6 +74,14 @@ public class MorpionSwing {
 			for (int j = 0; j < this.cases[i].length; j++) {
 				this.cases[i][j] = new JLabel();
 				grille.add(this.cases[i][j]);
+
+				// Ajout de l'événement listener de la souris
+				final int x = i;
+				final int y = j;
+				this.cases[i][j].addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) { actionCaseClicked(x, y);}
+				});
 			}
 		}
 
@@ -81,7 +91,7 @@ public class MorpionSwing {
 		// Construire la vue (présentation)
 		//	Définir la fenêtre principale
 		this.fenetre = new JFrame("Morpion");
-		this.fenetre.setLocation(100, 200);
+		this.fenetre.setLocation(1600, 200);
 		this.fenetre.setIconImage(new ImageIcon(Objects.requireNonNull(MorpionSwing.class.getResource("croix.jpg"))).getImage());
 
 		// Construction du Menu
@@ -120,6 +130,7 @@ public class MorpionSwing {
 		this.fenetre.setVisible(true);	// l'afficher
 	}
 
+
 	// Quelques réactions aux interactions de l'utilisateur
 	// ----------------------------------------------------
 
@@ -138,14 +149,39 @@ public class MorpionSwing {
 		joueur.setIcon(images.get(modele.getJoueur()));
 	}
 
+	/** Déclenche la demande de nouvelle partie. */
 	public void actionNouvellePartie(ActionEvent ev) {
 		this.recommencer();
 		System.out.println("Nouvelle Partie");
 	}
 
+	/** Déclenche l'action de quitter. */
 	public void actionQuitter(ActionEvent ev) {
-		this.modele.quitter();
 		System.out.println("Quitter");
+		this.fenetre.dispose();
+	}
+
+	/** Déclenche l'action au click de la souris sur la case aux coordonnées [i][j]. */
+	private void actionCaseClicked(int i, int j) {
+		if(!modele.estGagnee() && !modele.estTerminee()) {
+			try {
+				// Si l'image de la case est vide
+				if (this.cases[i][j].getIcon().toString().equals("src/blanc.jpg")) {
+					// Modifier l'image par celle du joueur en cours
+					this.cases[i][j].setIcon(images.get(modele.getJoueur()));
+				}
+				this.modele.cocher(i, j);
+
+				if (modele.estGagnee())			// Si la partie est gagnée
+					System.out.println("Le joueur " + this.joueur.getIcon().toString() + " a gagné.");
+				else if (modele.estTerminee())	// Si la partie est terminée
+					System.out.println("MATCH NULL !");
+				else
+					this.joueur.setIcon(images.get(modele.getJoueur()));
+			} catch (CaseOccupeeException e) {
+				System.out.println(e.getMessage());
+			}
+		}
 	}
 
 	// La méthode principale
