@@ -1,6 +1,10 @@
-import java.util.*;
-
-public class EnsembleOrdonneChaine<T> implements EnsembleOrdonne<T> {
+/**
+ * Classe d'ensemble chaîné ordonné de cellules contenant des valeurs de type générique.
+ * Pour assurer le bon fonctionnement de cette classe, les types qui seront utilisés DOIVENT être comparables.
+ * Si les types ne sont pas nativement comparable, il FAUT implémenter la méthode compareTo et la définir dans la classe Cellule.
+ * @param <T> Type des valeurs insérée dans les cellules de l'ensemble.
+ */
+public class EnsembleOrdonneChaine<T extends Comparable> implements EnsembleOrdonne<T> {
 
     private final Cellule<T> premiereCellule;
     private int size = 0;

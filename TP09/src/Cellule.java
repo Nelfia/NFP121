@@ -1,3 +1,9 @@
+/**
+ * Classe de Cellules génériques utilisées dans le cadre d'Ensembles chaînés.
+ * Dans le cas d'une utilisation avec un ensemble chaîné ordonné, il FAUT que les valeurs des cellules soient comparables.
+ * Si le type de ces valeurs n'est pas comparable nativement, la méthode compareTo DOIT être redéfinie ici.
+ * @param <T> type des valeurs insérées dans les cellules
+ */
 public class Cellule<T> implements Comparable<T> {
     private T valeur;
     private Cellule<T> celluleSuivante;
