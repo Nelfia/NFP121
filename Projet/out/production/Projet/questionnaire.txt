@@ -1,0 +1,93 @@
+% NOM Prénom (numéro) : ... (...)
+
+
+**Remarque :** Ce fichier est au format Markdown.  À partir de lui, on peut
+produire un pdf, un odt, un docx, du html, etc.  Par exemple, avec pandoc on
+pourra faire :
+
+~~~
+pandoc --toc -o questionnaire.pdf questionnaire.txt
+pandoc --toc -s -o questionnaire.html questionnaire.txt
+~~~
+
+
+# Points non traités du sujet
+
+...
+
+
+# Traitements
+
+
+## Quelle est la classe du traitement choisi ?
+
+...
+
+
+## Pourquoi avoir fait de traitement une classe abstraite et non une interface ?
+
+...
+
+
+## Pourquoi certaines méthodes sont déclarées `final` ?
+
+...
+
+
+## La classe Traitement est abstraite alors qu'elle ne contient pas de méthodes abstraites. Pourquoi ?
+
+...
+
+
+## Est-ce que de faire de Traitement une classe abstraite est vraiment logique ici ?
+
+...
+
+
+## Pour le traitement Normaliseur, quels autres traitements avez-vous utilisés et comment ?
+
+...
+
+
+## Quelles modifications avez-vous été obligés de faire sur la classe Position ?
+
+...
+
+
+
+# Remarques sur Swing
+
+...
+
+
+# Remarques sur l'Introspection
+
+...
+
+
+# Remarques sur XML
+
+## Lecture d'un document XML
+
+...
+
+
+## Production d'un document XML
+
+...
+
+
+# Principaux choix faits
+
+...
+
+
+# Critiques de l'architecture proposée et améliorations possibles
+
+...
+
+
+# Difficultés rencontrées
+
+...
+

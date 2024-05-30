@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ELEMENT donnees (donnee*)>
+<!ELEMENT donnee (valeur,x)>
+<!ATTLIST donnee id CDATA #REQUIRED>
+<!ATTLIST donnee y CDATA #REQUIRED>
+<!ELEMENT x (#PCDATA)>
+<!ELEMENT valeur (#PCDATA)>
