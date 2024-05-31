@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!ELEMENT interfaces ((auto | iface)*)>
+<!ELEMENT auto (name+)>
+<!ELEMENT name EMPTY>
+<!ENTITY % addressIP "#PCDATA">
+<!ATT   LIST name value CDATA #REQUIRED>
+
+<!ELEMENT iface (inet)>
+<!ATTLIST iface name CDATA #REQUIRED>
+
+<!ELEMENT inet (loopback | dhcp | static)>
+<!ELEMENT loopback EMPTY>
+
+<!ELEMENT dhcp EMPTY>
+<!ATTLIST dhcp hostname CDATA #IMPLIED>
+
+<!ELEMENT static (address, netmask, gateway?)>
+<!ELEMENT address (%addressIP;)>
+<!ELEMENT netmask (%addressIP;)>
+<!ELEMENT gateway (%addressIP;)>
+

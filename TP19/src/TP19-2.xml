@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE interfaces SYSTEM "interfaces.dtd">
+
+<!-- /etc/network/interfaces -->
+<!-- The configuration file fot ifup(8), ifdown(8) -->
+<interfaces>
+
+    <!-- The loopback interface -->
+    <auto>
+        <name value="lo" />
+    </auto>
+
+    <iface name="lo">
+        <inet>
+            <loopback />
+        </inet>
+    </iface>
+
+    <auto>
+        <name value="eth0" />
+        <name value="eth1" />
+    </auto>
+
+    <iface name="eth0">
+        <inet>
+            <dhcp />
+        </inet>
+    </iface>
+
+    <iface name="eth1">
+        <inet>
+            <static>
+                <address>147.127.18.49</address>
+                <netmask>255.255.240.0</netmask>
+                <gateway>147.127.18.200</gateway>
+            </static>
+        </inet>
+    </iface>
+
+</interfaces>
