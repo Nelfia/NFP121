@@ -2,13 +2,21 @@ import java.util.Objects;
 
 /** Définir une position.  */
 public class Position {
-	public int x;
-	public int y;
+	private int x;
+	private int y;
 
 	public Position(int x, int y) {
 		this.x = x;
 		this.y = y;
 		// System.out.println("...appel à Position(" + x + "," + y + ")" + " --> " + this);
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
 	}
 
 	@Override public String toString() {
@@ -27,4 +35,5 @@ public class Position {
 	public int hashCode() {
 		return Objects.hash(x, y);
 	}
+
 }

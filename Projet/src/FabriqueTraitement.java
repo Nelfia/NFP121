@@ -1,3 +1,7 @@
+import org.jdom2.JDOMException;
+
+import java.io.IOException;
+
 /**
   * FabriqueTraitement permet de construire les traitments demandés.
   * Cette classe peut être complétée si nécessaire.
@@ -18,9 +22,7 @@ public interface FabriqueTraitement {
 	SupprimerPlusGrand supprimerPlusGrand(double seuil);
 	SupprimerPlusPetit supprimerPlusPetit(double seuil);
 	Max max();
-	/*
 	Normaliseur normaliseur(double debut, double fin);
-	GenerateurXML generateurXML(String nomFichier);
-	*/
+	GenerateurXML generateurXML(String nomFichier) throws IOException, JDOMException;
 
 }

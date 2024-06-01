@@ -72,8 +72,5 @@ public class PositionsTest extends TraitementTestAbstrait {
 	public void testerErreurIndexTropPetit() {
 		this.positions.position(-1);
 	}
-	
-
-
 
 }

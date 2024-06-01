@@ -6,7 +6,7 @@ import java.io.*;
 public class AnalyseurInitial {
 	/** Charger l'analyseur avec les données du fichier "donnees.java". */
 	public void traiter() {
-		try (BufferedReader in = new BufferedReader(new FileReader("donnees.txt"))) {
+		try (BufferedReader in = new BufferedReader(new FileReader("./src/donnees.txt"))) {
 			double somme = 0.0;
 			String ligne;
 			while ((ligne = in.readLine()) != null) {

@@ -1,3 +1,7 @@
+import org.jdom2.JDOMException;
+
+import java.io.IOException;
+
 /**
   * FabriqueTraitementConcrete concrétise FabriqueTraitement.
   *
@@ -38,13 +42,11 @@ public class FabriqueTraitementConcrete implements FabriqueTraitement {
 		return new Max();
 	}
 
-	/*
 	@Override public Normaliseur normaliseur(double debut, double fin) {
 		return new Normaliseur(debut, fin);
 	}
 
-	@Override public GenerateurXML generateurXML(String nomFichier) {
+	@Override public GenerateurXML generateurXML(String nomFichier) throws IOException, JDOMException {
 		return new GenerateurXML(nomFichier);
 	}
-	*/
-	}
+}

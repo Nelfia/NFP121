@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE donnees SYSTEM "generateur.dtd">
+<donnees>
+  <lot name="donnees.txt">
+    <donnee>
+      <position x="1" y="1">
+        <valeur>58.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>83.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>23.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>28.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="1">
+        <valeur>100.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>56.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>35.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>9.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>4.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>6.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>28.0</valeur>
+      </position>
+    </donnee>
+  </lot>
+  <lot name="donnees2-f2.txt">
+    <donnee>
+      <position x="1" y="1">
+        <valeur>58.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>83.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>23.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>28.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="1">
+        <valeur>100.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>56.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>35.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>9.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>4.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>6.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>28.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="3" y="1">
+        <valeur>3.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="3">
+        <valeur>8.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>23.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>28.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="1">
+        <valeur>100.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>56.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>35.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>9.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>4.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>6.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="7" y="2">
+        <valeur>28.0</valeur>
+      </position>
+    </donnee>
+  </lot>
+</donnees>

@@ -21,52 +21,52 @@ pandoc --toc -s -o questionnaire.html questionnaire.txt
 
 ## Quelle est la classe du traitement choisi ?
 
-    J'ai quelques idées, mais sans certitudes sur l'originalité de ces dernières. Par exemple: calculer la moyenne des
-    valeurs
+J'ai quelques idées, mais sans certitudes sur l'originalité de ces dernières. Par exemple: calculer la moyenne des
+valeurs
 
 
 ## Pourquoi avoir fait de traitement une classe abstraite et non une interface ?
 
-    Pour pouvoir factoriser un maximum de code concernant les traitements et pouvoir imposer certaines méthodes à ses
-    sous-classes.
-    Cela permet également de lui déléguer la responsabilité des traitements en faisant appel à ses méthodes concrètes.
+Pour pouvoir factoriser un maximum de code concernant les traitements et pouvoir imposer certaines méthodes à ses
+sous-classes.
+Cela permet également de lui déléguer la responsabilité des traitements en faisant appel à ses méthodes concrètes.
 
 
 ## Pourquoi certaines méthodes sont déclarées `final` ?
 
-    Elles ne peuvent pas être redéfinies par les sous-classes, ce qui permet justement de leur imposer ces méthodes
-    telles qu'elles sont écrites.
+Elles ne peuvent pas être redéfinies par les sous-classes, ce qui permet justement de leur imposer ces méthodes
+telles qu'elles sont écrites.
 
 
 ## La classe Traitement est abstraite alors qu'elle ne contient pas de méthodes abstraites. Pourquoi ?
 
-     Elle n'est pas instanciable et spécifie un comportement. La classe Traitement ne s'occupe que de la gestion de
-     traitements, elle ne les réalise pas. Elle oblige donc les "utilisateurs" à définir des sous-classes qui
-     réaliseront les traitements concrets.
+Elle n'est pas instanciable et spécifie un comportement. La classe Traitement ne s'occupe que de la gestion de
+traitements, elle ne les réalise pas. Elle oblige donc les "utilisateurs" à définir des sous-classes qui
+réaliseront les traitements concrets.
 
 
 ## Est-ce que de faire de Traitement une classe abstraite est vraiment logique ici ?
 
-    Oui, pour toutes les raison évoquées ci-dessus: on évite de dupliquer du code, on s'assure d'avoir une gestion
-    commune des traitements, on impose à chaque traitement des méthodes communes...
+Oui, pour toutes les raison évoquées ci-dessus: on évite de dupliquer du code, on s'assure d'avoir une gestion
+commune des traitements, on impose à chaque traitement des méthodes communes...
 
 
 ## Pour le traitement Normaliseur, quels autres traitements avez-vous utilisés et comment ?
 
-    - Donnees : pour enregistrer toutes les données dans une List
-    - Max : pour récupérer la valeur maximum et pour récupérer la valeur minimum.
+- Donnees : pour enregistrer toutes les données dans une List
+- Max : pour récupérer la valeur maximum et pour récupérer la valeur minimum.
 
-    On les utilise dans la méthode traiter pour pouvoir appliquer un premier traitement sur l'intégralité des données
-    lues. Puis on récupère les résultats de ces traitement dans GestionFinDeLotLocal car nous avons besoin que toutes
-    les données aient subies les différents traitements avant de pouvoir les normaliser.
+On les utilise dans la méthode traiter pour pouvoir appliquer un premier traitement sur l'intégralité des données
+lues. Puis on récupère les résultats de ces traitement dans GestionFinDeLotLocal car nous avons besoin que toutes
+les données aient subies les différents traitements avant de pouvoir les normaliser.
 
 
 ## Quelles modifications avez-vous été obligés de faire sur la classe Position ?
 
-    Nous avons été obligé de surcharger equals() qui nous permet de comparer les valeurs logiques des éléments que nous
-    estimons représentatifs de 2 objets pour pouvoir dire qu'ils sont équivalents. Sans cela, nous ne faisons que
-    comparer leurs valeurs physiques (adresse en mémoire physique) qui sont nécessairement différentes car chaque
-    Position est instanciée avec le mot-clé "new" qui créé une nouvelle adresse en mémoire.
+Nous avons été obligé de surcharger equals() qui nous permet de comparer les valeurs logiques des éléments que nous
+estimons représentatifs de 2 objets pour pouvoir dire qu'ils sont équivalents. Sans cela, nous ne faisons que
+comparer leurs valeurs physiques (adresse en mémoire physique) qui sont nécessairement différentes car chaque
+Position est instanciée avec le mot-clé "new" qui créé une nouvelle adresse en mémoire.
 
 
 # Remarques sur Swing
@@ -76,7 +76,7 @@ pandoc --toc -s -o questionnaire.html questionnaire.txt
 
 # Remarques sur l'Introspection
 
-    C'est absolument génial! XD
+C'est absolument génial! XD
 
 
 # Remarques sur XML

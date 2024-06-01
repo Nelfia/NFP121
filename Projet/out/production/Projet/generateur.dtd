@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ELEMENT donnees (lot*)>
+<!ELEMENT lot (donnee*)>
+<!ATTLIST lot
+        name CDATA #REQUIRED
+        type CDATA #IMPLIED
+        format CDATA #IMPLIED>
+<!ELEMENT donnee (position)>
+<!ELEMENT position (valeur)>
+<!ATTLIST position
+        x CDATA #REQUIRED
+        y CDATA #REQUIRED>
+<!ELEMENT valeur (#PCDATA)>
