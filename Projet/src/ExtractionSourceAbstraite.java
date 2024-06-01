@@ -14,12 +14,12 @@ abstract public class ExtractionSourceAbstraite {
     }
 
     /** Obtenir le nom de la source */
-    public String getNomFichier() {
+    public final String getNomFichier() {
         return this.NOM_FICHIER;
     }
 
     /** Obtenir les données extraites de la source */
-    public Donnees getDonnees() {
+    public final Donnees getDonnees() {
         return this.DONNEES;
     }
 

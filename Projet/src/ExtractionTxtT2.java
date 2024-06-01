@@ -5,9 +5,9 @@ import java.io.IOException;
 /** Classe chargée de l'extraction des données d'une source fichier format .txt de type 2:
  *  Chaque ligne est organisée de la façon suivante: un identifiant (ignoré), une abscisse (entier), une ordonnée (entier),
  * un mot (ignoré), une valeur (réel) et, enfin, une lettre (ignorée).*/
-public class ExtractionTxtT2 extends ExtractionTxt{
+public class ExtractionTxtT2 extends ExtractionSourceAbstraite{
     public ExtractionTxtT2(String nomDocument) {
-        super(nomDocument, "T2");
+        super(nomDocument);
     }
 
     @Override

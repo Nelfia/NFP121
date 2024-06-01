@@ -45,29 +45,29 @@ public class ExempleAnalyse {
 
 		System.out.println("Traitement : " + main);
 
-//		// Traiter des données manuelles
-//		main.gererDebutLot("manuelles");
-//		main.traiter(new Position(1, 1), 5.0);
-//		main.traiter(new Position(1, 2), 2.0);
-//		main.traiter(new Position(1, 1), -1.0);
-//		main.gererFinLot("manuelles");
-//
-//		// Autres données manuelles
-//		main.gererDebutLot("manuelles2");
-//		main.traiter(new Position(1, 1), 5.0);
-//		main.traiter(new Position(1, 2), 2.0);
-//		main.traiter(new Position(1, 1), -1.0);
-//		main.traiter(new Position(1, 3), 4.2);
-//		main.traiter(new Position(2, 5), 3.7);
-//		main.traiter(new Position(3, 7), 5.1);
-//		main.gererFinLot("manuelles");
-//
-//		// Lot numéro 2
-//		main.gererDebutLot("test2");
-//		main.traiter(new Position(100, 105), 5.0);
-//		main.traiter(new Position(100, 102), 2.0);
-//		main.traiter(new Position(100, 105), -1.0);
-//		main.gererFinLot("test2");
+		// Traiter des données manuelles
+		main.gererDebutLot("manuelles");
+		main.traiter(new Position(1, 1), 5.0);
+		main.traiter(new Position(1, 2), 2.0);
+		main.traiter(new Position(1, 1), -1.0);
+		main.gererFinLot("manuelles");
+
+		// Autres données manuelles
+		main.gererDebutLot("manuelles2");
+		main.traiter(new Position(1, 1), 5.0);
+		main.traiter(new Position(1, 2), 2.0);
+		main.traiter(new Position(1, 1), -1.0);
+		main.traiter(new Position(1, 3), 4.2);
+		main.traiter(new Position(2, 5), 3.7);
+		main.traiter(new Position(3, 7), 5.1);
+		main.gererFinLot("manuelles");
+
+		// Lot numéro 2
+		main.gererDebutLot("test2");
+		main.traiter(new Position(100, 105), 5.0);
+		main.traiter(new Position(100, 102), 2.0);
+		main.traiter(new Position(100, 105), -1.0);
+		main.gererFinLot("test2");
 
 		// Extraction du fichier donnees.txt
 		ExtractionTxtT1 source1 = new ExtractionTxtT1("src/donnees.txt");

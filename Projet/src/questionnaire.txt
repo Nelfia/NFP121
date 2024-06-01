@@ -88,12 +88,19 @@ C'est absolument génial! XD
 
 ## Production d'un document XML
 
-...
+Génération avec JDOM2 selon la dtd generateur.dtd.
+Choix d'enregistrer les données en conservant toutes les données brutes. IL aurait été possible de les enregistrer avec
+toutes les valeurs par position, mais il était plus simple de le lire (et de le générer) ainsi.
 
 
 # Principaux choix faits
 
-...
+- Ajout d'une classe abstraite ExtractionSourceAbstraite : permet de factoriser une partie du code
+- Ajout d'une classe ExtractionTxtT1 : permet d'extraire les données d'un fichier texte de type 1
+- Ajout d'une classe ExtractionTxtT2 : permet d'extraire les données d'un fichier texte de type 1
+Il aurait été possible de faire l'extraction différemment, par exemple en définissant une classe d'Extraction de données
+plus générale qui disposeraient de méthodes spécifiques pour extraire les données en fonction du type de fichier et de
+son format (ex: txt type 1 ou txt type 2).
 
 
 # Critiques de l'architecture proposée et améliorations possibles
@@ -103,7 +110,8 @@ C'est absolument génial! XD
 
 # Difficultés rencontrées
 
-Il m'a fallu un certain temps pour réaliser le Normaliseur qui est la premier traitement où nous devons changer de
-façon de procéder puisqu'il est réalisé en 2 fois. Je n'ai pas terminé et quelque chose me dit que le pire reste à
+Il m'a fallu un certain temps pour réaliser le Normaliseur qui est le premier traitement où nous devons changer de
+façon de procéder puisqu'il est réalisé en 2 fois. Je n'ai pas terminé et quelque chose me dit que le plus dur reste à
 venir.
 
+J'ai du mal à comprendre le but de l'Analyseur.

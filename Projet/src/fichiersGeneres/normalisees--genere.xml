@@ -1,25 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE donnees SYSTEM "generateur.dtd">
 <donnees>
-  <lot name="donnees.txt">
+  <lot name="manuelles">
     <donnee>
       <position x="1" y="1">
-        <valeur>58.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>83.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>23.0</valeur>
+        <valeur>100.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>28.0</valeur>
+        <valeur>50.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+  </lot>
+  <lot name="manuelles2">
+    <donnee>
+      <position x="1" y="1">
+        <valeur>98.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>49.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>98.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>49.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="3">
+        <valeur>85.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="5">
+        <valeur>77.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="3" y="7">
+        <valeur>100.0</valeur>
+      </position>
+    </donnee>
+  </lot>
+  <lot name="test2">
+    <donnee>
+      <position x="1" y="1">
+        <valeur>98.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>49.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>98.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>49.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="3">
+        <valeur>85.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="5">
+        <valeur>77.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="3" y="7">
+        <valeur>100.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="105">
+        <valeur>98.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="102">
+        <valeur>49.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="105">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+  </lot>
+  <lot name="donnees.txt">
+    <donnee>
+      <position x="1" y="1">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="3">
+        <valeur>27.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="5">
+        <valeur>25.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="3" y="7">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="105">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="102">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="105">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>61.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>84.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>27.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>32.0</valeur>
       </position>
     </donnee>
     <donnee>
@@ -29,12 +215,17 @@
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>56.0</valeur>
+        <valeur>58.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>35.0</valeur>
+        <valeur>38.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>14.0</valeur>
       </position>
     </donnee>
     <donnee>
@@ -44,54 +235,114 @@
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>4.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>6.0</valeur>
+        <valeur>11.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>28.0</valeur>
+        <valeur>32.0</valeur>
       </position>
     </donnee>
   </lot>
   <lot name="donnees2-f2.txt">
     <donnee>
       <position x="1" y="1">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="3">
+        <valeur>27.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="5">
+        <valeur>25.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="3" y="7">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="105">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="102">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="105">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>61.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>84.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>27.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="1">
+        <valeur>100.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
         <valeur>58.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>83.0</valeur>
+        <valeur>38.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>23.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="2">
-        <valeur>28.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="2" y="1">
-        <valeur>100.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="2">
-        <valeur>56.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>35.0</valeur>
+        <valeur>14.0</valeur>
       </position>
     </donnee>
     <donnee>
@@ -101,37 +352,32 @@
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>4.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>6.0</valeur>
+        <valeur>11.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>28.0</valeur>
+        <valeur>32.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="3" y="1">
-        <valeur>3.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="3">
         <valeur>8.0</valeur>
       </position>
     </donnee>
     <donnee>
+      <position x="1" y="3">
+        <valeur>13.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
       <position x="1" y="1">
-        <valeur>23.0</valeur>
+        <valeur>27.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>28.0</valeur>
+        <valeur>32.0</valeur>
       </position>
     </donnee>
     <donnee>
@@ -141,12 +387,17 @@
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>56.0</valeur>
+        <valeur>58.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>35.0</valeur>
+        <valeur>38.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>14.0</valeur>
       </position>
     </donnee>
     <donnee>
@@ -156,54 +407,114 @@
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>4.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>6.0</valeur>
+        <valeur>11.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="7" y="2">
-        <valeur>28.0</valeur>
+        <valeur>32.0</valeur>
       </position>
     </donnee>
   </lot>
   <lot name="donnees-erreurs">
     <donnee>
       <position x="1" y="1">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="3">
+        <valeur>27.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="5">
+        <valeur>25.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="3" y="7">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="105">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="102">
+        <valeur>16.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="100" y="105">
+        <valeur>0.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>61.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>84.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>27.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>32.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="1">
+        <valeur>100.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
         <valeur>58.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>83.0</valeur>
+        <valeur>38.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>23.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="2">
-        <valeur>28.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="2" y="1">
-        <valeur>100.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="2">
-        <valeur>56.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>35.0</valeur>
+        <valeur>14.0</valeur>
       </position>
     </donnee>
     <donnee>
@@ -213,37 +524,32 @@
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>4.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>6.0</valeur>
+        <valeur>11.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>28.0</valeur>
+        <valeur>32.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="3" y="1">
-        <valeur>3.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="3">
         <valeur>8.0</valeur>
       </position>
     </donnee>
     <donnee>
+      <position x="1" y="3">
+        <valeur>13.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
       <position x="1" y="1">
-        <valeur>23.0</valeur>
+        <valeur>27.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>28.0</valeur>
+        <valeur>32.0</valeur>
       </position>
     </donnee>
     <donnee>
@@ -253,12 +559,17 @@
     </donnee>
     <donnee>
       <position x="1" y="2">
-        <valeur>56.0</valeur>
+        <valeur>58.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>35.0</valeur>
+        <valeur>38.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>14.0</valeur>
       </position>
     </donnee>
     <donnee>
@@ -268,17 +579,12 @@
     </donnee>
     <donnee>
       <position x="1" y="1">
-        <valeur>4.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="1">
-        <valeur>6.0</valeur>
+        <valeur>11.0</valeur>
       </position>
     </donnee>
     <donnee>
       <position x="7" y="2">
-        <valeur>28.0</valeur>
+        <valeur>32.0</valeur>
       </position>
     </donnee>
   </lot>
