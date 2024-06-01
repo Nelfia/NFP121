@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE donnees SYSTEM "donnees2.dtd">
 
 <donnees>
     <donnee id="1" x="1" y="2">
