@@ -1,4 +1,4 @@
-% NOM Prénom (numéro) : ... (...)
+% NOM Prénom (numéro) : JULIEN Quiterie (10)
 
 
 **Remarque :** Ce fichier est au format Markdown.  À partir de lui, on peut
