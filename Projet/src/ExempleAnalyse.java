@@ -87,6 +87,16 @@ public class ExempleAnalyse {
 		}
 		main.gererFinLot("donnees2-f2.txt");
 
+		// Extraction du fichier donnees2.xml
+		ExtractionXmlDtd2 source = new ExtractionXmlDtd2("src/donnees2.xml");
+		source.extraireDonnees();
+		main.gererDebutLot("donnees2.xml");
+		for(AbstractMap.SimpleImmutableEntry<Position, Double> donnee: source.getDonnees().getDonnees()){
+			main.traiter(donnee.getKey(), donnee.getValue());
+		}
+		main.gererFinLot("donnees2.xml");
+
+
 		// Extraction du fichier donnees2-f2.txt
 		ExtractionTxtT2 source3 = new ExtractionTxtT2("src/donnees-erreurs.txt");
 		source2.extraireDonnees();

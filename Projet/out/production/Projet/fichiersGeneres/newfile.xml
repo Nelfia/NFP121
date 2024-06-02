@@ -182,4 +182,5 @@
     </donnee>
   </lot>
   <lot name="donnees-erreurs" />
+  <lot name="donnees2.xml" />
 </donnees>

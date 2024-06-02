@@ -22,7 +22,7 @@ pandoc --toc -s -o questionnaire.html questionnaire.txt
 ## Quelle est la classe du traitement choisi ?
 
 J'ai quelques idées, mais sans certitudes sur l'originalité de ces dernières. Par exemple: calculer la moyenne des
-valeurs
+valeurs ou la moyenne des valeurs par position.
 
 
 ## Pourquoi avoir fait de traitement une classe abstraite et non une interface ?
@@ -83,7 +83,9 @@ C'est absolument génial! XD
 
 ## Lecture d'un document XML
 
-...
+D'une simplicité déconcertante avec JDOM + la DTD. J'ai rencontré initialement des difficultés car mon chemin absolu
+comportait des dossiers mal formattés (espaces et accents). Une fois le chemin corrigé, tout s'est parfaitement
+déroulé.
 
 
 ## Production d'un document XML
