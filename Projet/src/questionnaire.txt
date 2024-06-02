@@ -23,6 +23,7 @@ pandoc --toc -s -o questionnaire.html questionnaire.txt
 
 J'ai quelques idées, mais sans certitudes sur l'originalité de ces dernières. Par exemple: calculer la moyenne des
 valeurs ou la moyenne des valeurs par position.
+J'ai pensé aussi à générer un graphique à partir des données comme nous l'avions fait en TP au début de l'UE.
 
 
 ## Pourquoi avoir fait de traitement une classe abstraite et non une interface ?

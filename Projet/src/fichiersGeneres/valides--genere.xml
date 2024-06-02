@@ -13,45 +13,6 @@
       </position>
     </donnee>
   </lot>
-  <lot name="manuelles2">
-    <donnee>
-      <position x="1" y="1">
-        <valeur>5.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="2">
-        <valeur>2.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="1" y="3">
-        <valeur>4.2</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="2" y="5">
-        <valeur>3.7</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="3" y="7">
-        <valeur>5.1</valeur>
-      </position>
-    </donnee>
-  </lot>
-  <lot name="test2">
-    <donnee>
-      <position x="100" y="105">
-        <valeur>5.0</valeur>
-      </position>
-    </donnee>
-    <donnee>
-      <position x="100" y="102">
-        <valeur>2.0</valeur>
-      </position>
-    </donnee>
-  </lot>
   <lot name="donnees.txt">
     <donnee>
       <position x="1" y="1">
@@ -169,4 +130,41 @@
     </donnee>
   </lot>
   <lot name="donnees-erreurs" />
+  <lot name="Données de Swing">
+    <donnee>
+      <position x="2" y="4">
+        <valeur>6.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>2.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>2.5</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>4.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="1">
+        <valeur>6.5</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="2" y="2">
+        <valeur>0.2</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="6" y="2">
+        <valeur>0.8</valeur>
+      </position>
+    </donnee>
+  </lot>
 </donnees>

@@ -10,22 +10,18 @@ import java.io.IOException;
 
 /** Classe chargée de l'extraction des données d'une source fichier format .xml respectant la DTD donnees2.dtd */
 public class ExtractionXmlDtd2 extends ExtractionSourceAbstraite {
-    private Document document;
+    private final Document DOCUMENT;
 
     public ExtractionXmlDtd2(String nomDocument) {
         super(nomDocument);
         SAXBuilder sxb = new SAXBuilder();
-
         try {
-            this.document = sxb.build(new File(nomDocument));
-
+            this.DOCUMENT = sxb.build(new File(nomDocument));
         } catch (IOException e) {
             System.out.println("Erreur d'entrée/sortie : " + e);
-            e.printStackTrace();
             throw new RuntimeException(e);
         } catch (JDOMException e) {
             System.out.println("Erreur JDOM : " + e);
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
@@ -35,7 +31,7 @@ public class ExtractionXmlDtd2 extends ExtractionSourceAbstraite {
         try {
             Position pos;
             double valeur;
-            for (Element e: document.getDescendants(new ElementFilter("donnee"))){
+            for (Element e: this.DOCUMENT.getDescendants(new ElementFilter("donnee"))){
                 pos = new Position(e.getAttribute("x").getIntValue(), e.getAttribute("y").getIntValue());
                 for (Element val: e.getDescendants(new ElementFilter("valeur"))){
                     valeur = Double.parseDouble(val.getText());
@@ -44,7 +40,6 @@ public class ExtractionXmlDtd2 extends ExtractionSourceAbstraite {
             }
         } catch (DataConversionException e) {
             System.out.println("Erreur Typage : " + e);
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

@@ -35,7 +35,7 @@ public class ExempleAnalyse {
 		System.out.println("Positions.frequence(new Position(1,2)) = " + positions.frequence(new Position(1, 2)));
 	}
 
-	public static void exemple2(String traitements) throws FileNotFoundException {
+	public static void exemple2(String traitements) {
 		System.out.println();
 		System.out.println("=== exemple2(" + traitements + ") ===");
 
@@ -51,23 +51,6 @@ public class ExempleAnalyse {
 		main.traiter(new Position(1, 2), 2.0);
 		main.traiter(new Position(1, 1), -1.0);
 		main.gererFinLot("manuelles");
-
-		// Autres données manuelles
-		main.gererDebutLot("manuelles2");
-		main.traiter(new Position(1, 1), 5.0);
-		main.traiter(new Position(1, 2), 2.0);
-		main.traiter(new Position(1, 1), -1.0);
-		main.traiter(new Position(1, 3), 4.2);
-		main.traiter(new Position(2, 5), 3.7);
-		main.traiter(new Position(3, 7), 5.1);
-		main.gererFinLot("manuelles");
-
-		// Lot numéro 2
-		main.gererDebutLot("test2");
-		main.traiter(new Position(100, 105), 5.0);
-		main.traiter(new Position(100, 102), 2.0);
-		main.traiter(new Position(100, 105), -1.0);
-		main.gererFinLot("test2");
 
 		// Extraction du fichier donnees.txt
 		ExtractionTxtT1 source1 = new ExtractionTxtT1("src/donnees.txt");
@@ -96,8 +79,7 @@ public class ExempleAnalyse {
 		}
 		main.gererFinLot("donnees2.xml");
 
-
-		// Extraction du fichier donnees2-f2.txt
+		// Extraction du fichier donnees-erreurs.txt
 		ExtractionTxtT2 source3 = new ExtractionTxtT2("src/donnees-erreurs.txt");
 		source2.extraireDonnees();
 		main.gererDebutLot("donnees-erreurs");
@@ -106,13 +88,22 @@ public class ExempleAnalyse {
 		}
 		main.gererFinLot("donnees-erreurs");
 
+		// Extraction des données du nouveau fichier
+		ExtractionTxtT1 source5 = new ExtractionTxtT1("src/fichiersGeneres/donneesGenereesParSwing.txt");
+		source5.extraireDonnees();
+		main.gererDebutLot("Données de Swing");
+		for(AbstractMap.SimpleImmutableEntry<Position, Double> donnee: source5.getDonnees().getDonnees()){
+			main.traiter(donnee.getKey(), donnee.getValue());
+		}
+		main.gererFinLot("Données de Swing");
+
 		// Construire l'analyseur
 		Analyseur analyseur = new Analyseur(main);
 
 		// Traiter les autres sources de données : "donnees.txt", etc.
 	}
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) {
 		exemple1();
 		exemple2("Somme 0 1 Positions 0 1 Normaliseur 2 double 0.0 double 100.0 0");
 		exemple2("GenerateurXML 1 java.lang.String newfile.xml 0");
