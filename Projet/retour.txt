@@ -1,0 +1,20 @@
+
+Questionnaire :
+
+* OK pour les traitements proposés.  Engendrer un graphique va prendre du
+  temps.  Ce n'est donc pas nécessaire.
+* Attention à ne pas confondre surcharger et redéfinir.
+
+* L'analyseur fait le lien entre les sources et les traitements.
+
+Code :
+
+* Donnees : pourquoi DONNEES en majuscules ?
+* Extraction* : setDonnees -> addDonnee ?
+* GenererTxtT1 :
+    - Pourquoi MouseListener et pas ActionListener ?
+    - Pourquoi un seul Listener et pas plusieurs ?
+    - Ceci était prévu dans SaisiesSwing.
+* SommeParPosition : if peu lisible.
+* TraitementBuilder :
+    - analyserTraitement : le if est inutile.
