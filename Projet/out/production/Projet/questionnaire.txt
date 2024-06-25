@@ -22,13 +22,14 @@ pandoc --toc -s -o questionnaire.html questionnaire.txt
 ## Quelle est la classe du traitement choisi ?
 
 J'ai quelques idées, mais sans certitudes sur l'originalité de ces dernières. Par exemple: calculer la moyenne des
-valeurs
+valeurs ou la moyenne des valeurs par position.
+J'ai pensé aussi à générer un graphique à partir des données comme nous l'avions fait en TP au début de l'UE.
 
 
 ## Pourquoi avoir fait de traitement une classe abstraite et non une interface ?
 
 Pour pouvoir factoriser un maximum de code concernant les traitements et pouvoir imposer certaines méthodes à ses
-sous-classes.
+sous-classes car elles ne pourront être redéfinies par ces dernières.
 Cela permet également de lui déléguer la responsabilité des traitements en faisant appel à ses méthodes concrètes.
 
 
@@ -63,7 +64,7 @@ les données aient subies les différents traitements avant de pouvoir les norma
 
 ## Quelles modifications avez-vous été obligés de faire sur la classe Position ?
 
-Nous avons été obligé de surcharger equals() qui nous permet de comparer les valeurs logiques des éléments que nous
+Nous avons été obligé de redéfinir equals() qui nous permet de comparer les valeurs logiques des éléments que nous
 estimons représentatifs de 2 objets pour pouvoir dire qu'ils sont équivalents. Sans cela, nous ne faisons que
 comparer leurs valeurs physiques (adresse en mémoire physique) qui sont nécessairement différentes car chaque
 Position est instanciée avec le mot-clé "new" qui créé une nouvelle adresse en mémoire.
@@ -83,7 +84,9 @@ C'est absolument génial! XD
 
 ## Lecture d'un document XML
 
-...
+D'une simplicité déconcertante avec JDOM + la DTD. J'ai rencontré initialement des difficultés car mon chemin absolu
+comportait des dossiers mal formattés (espaces et accents). Une fois le chemin corrigé, tout s'est parfaitement
+déroulé.
 
 
 ## Production d'un document XML
@@ -114,4 +117,3 @@ Il m'a fallu un certain temps pour réaliser le Normaliseur qui est le premier t
 façon de procéder puisqu'il est réalisé en 2 fois. Je n'ai pas terminé et quelque chose me dit que le plus dur reste à
 venir.
 
-J'ai du mal à comprendre le but de l'Analyseur.

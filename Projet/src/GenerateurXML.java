@@ -9,21 +9,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * GenerateurXML écrit dans un fichier, Ã  chaque fin de lot, toutes
+ * GenerateurXML écrit dans un fichier, à chaque fin de lot, toutes
  * les données lues en indiquant le lot dans le fichier XML.
  *
  * @author	Xavier Crégut <Prenom.Nom@enseeiht.fr>
  */
 public class GenerateurXML extends Traitement {
-    private final String DOCUMENT_NAME;
-    private final Document DOCUMENT;
-    private final Element RACINE;
+    private final String documentName;
+    private final Document document;
+    private final Element racine;
     private Element lot;
 
     public GenerateurXML(String documentName) {
-        this.DOCUMENT_NAME = documentName;
-        this.RACINE = new Element("donnees");
-        this.DOCUMENT = new Document(this.RACINE, new DocType("donnees", "generateur.dtd"));
+        this.documentName = documentName;
+        this.racine = new Element("donnees");
+        this.document = new Document(this.racine, new DocType("donnees", "generateur.dtd"));
     }
 
     private Element createDonnee(Position pos, double val){
@@ -44,7 +44,7 @@ public class GenerateurXML extends Traitement {
         Element lot = new Element("lot");
         lot.setAttribute("name", nomLot);
         this.lot = lot;
-        this.RACINE.addContent(this.lot);
+        this.racine.addContent(this.lot);
     }
 
     @Override
@@ -59,18 +59,21 @@ public class GenerateurXML extends Traitement {
         // Afficher le document
         XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
 
-        try {
+        try (FileWriter fileWriter = new FileWriter("src/fichiersGeneres/" + this.documentName)) {
             // Créer le répertoire dans lequel seront mis les fichiers XML générés
             File dir = new File("src/fichiersGeneres");
             if (!dir.exists()) dir.mkdirs();
 
-            FileWriter fileWriter = new FileWriter("src/fichiersGeneres/" + this.DOCUMENT_NAME);
-            sortie.output(this.DOCUMENT, fileWriter);
-
+            sortie.output(this.document, fileWriter);
             System.out.println("Fin GenerateurXML " + nomLot);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    @Override
+    protected String toStringComplement() {
+        return "documentName = " + this.documentName;
+    }
 }

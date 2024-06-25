@@ -2,14 +2,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 /**
-  * TraitementBuilder 
-  *
-  * @author	Xavier Crégut <Prenom.Nom@enseeiht.fr>
-  */
+ * TraitementBuilder
+ *
+ * @author	Xavier Crégut <Prenom.Nom@enseeiht.fr>
+ */
 public class TraitementBuilder {
 
 	/** Retourne un objet de type Class correspondant au nom en paramètre.
@@ -64,16 +65,15 @@ public class TraitementBuilder {
 		return new Signature(formels, effectifs);
 	}
 
-
 	/** Analyser la création d'un objet.
 	 * Exemple : « Normaliseur 2 double 0.0 double 100.0 » consiste à charger
 	 * la classe Normaliseur, trouver le constructeur qui prend 2 double, et
 	 * l'appeler en lui fournissant 0.0 et 100.0 comme paramètres effectifs.
 	 */
 	Object analyserCreation(Scanner in)
-		throws ClassNotFoundException, InvocationTargetException,
-						  IllegalAccessException, NoSuchMethodException,
-						  InstantiationException
+			throws ClassNotFoundException, InvocationTargetException,
+			IllegalAccessException, NoSuchMethodException,
+			InstantiationException
 	{
 		String nomClasse = in.next();	// Récupérer la 1ère String qui doit correspondre au nom de la classe
 		Class<?> classe = analyserType(nomClasse);	// Récupérer la classe correspondante
@@ -81,7 +81,6 @@ public class TraitementBuilder {
 		Constructor<?> constructeur = classe.getConstructor(signature.formels);	// Récupère le bon constructeur en fonction des paramètres formels
 		return constructeur.newInstance(signature.effectifs);	// Instancie la poignée à partir des effectifs
 	}
-
 
 	/** Analyser un traitement.
 	 * Exemples :
@@ -94,21 +93,27 @@ public class TraitementBuilder {
 	 * @param env l'environnement oÃ¹ enregistrer les nouveaux traitements
 	 */
 	Traitement analyserTraitement(Scanner in, Map<String, Traitement> env)
-		throws ClassNotFoundException, InvocationTargetException,
-						  IllegalAccessException, NoSuchMethodException,
-						  InstantiationException
+			throws ClassNotFoundException, InvocationTargetException,
+			IllegalAccessException, NoSuchMethodException,
+			InstantiationException
 	{
+		String id = null;
+		if(in.hasNext("id")) {
+			in.next();
+			id = in.next();
+		}
+
 		Traitement traitement = (Traitement) analyserCreation(in);
+		if(id != null)
+			env.put(id, traitement);
 		int nbTraitements = in.nextInt(); // Nb traitements suivants
-		if(nbTraitements == 0) return traitement;
 
 		for(int i = 0; i < nbTraitements; i++) {
-			Traitement t = analyserTraitement(in, null);
-			traitement.ajouterSuivants(t);
+			Traitement t = analyserTraitement(in, env);
+			traitement.ajouterSuivants(t); // TODO: finir cette méthode
 		}
 		return traitement;
 	}
-
 
 	/** Analyser un traitement.
 	 * @param in le scanner à utiliser

@@ -6,6 +6,7 @@ import java.io.IOException;
  *  Chaque ligne est organisée de la façon suivante: un identifiant (ignoré), une abscisse (entier), une ordonnée (entier),
  * un mot (ignoré), une valeur (réel) et, enfin, une lettre (ignorée).*/
 public class ExtractionTxtT2 extends ExtractionSourceAbstraite{
+
     public ExtractionTxtT2(String nomDocument) {
         super(nomDocument);
     }
@@ -20,7 +21,7 @@ public class ExtractionTxtT2 extends ExtractionSourceAbstraite{
                 int x = Integer.parseInt(mots[1]);
                 int y = Integer.parseInt(mots[2]);
                 double valeur = Double.parseDouble(mots[4]);
-                this.setDonnees(x, y, valeur);
+                this.addDonnee(x, y, valeur);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -46,7 +46,15 @@ public class FabriqueTraitementConcrete implements FabriqueTraitement {
 		return new Normaliseur(debut, fin);
 	}
 
-	@Override public GenerateurXML generateurXML(String nomFichier) throws IOException, JDOMException {
+	@Override public GenerateurXML generateurXML(String nomFichier) {
 		return new GenerateurXML(nomFichier);
+	}
+
+	@Override public Moyenne moyenne() {
+		return new Moyenne();
+	}
+
+	@Override public MoyenneParPosition moyenneParPosition() {
+		return new MoyenneParPosition();
 	}
 }

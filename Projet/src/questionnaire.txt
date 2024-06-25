@@ -13,7 +13,9 @@ pandoc --toc -s -o questionnaire.html questionnaire.txt
 
 # Points non traités du sujet
 
-...
+Aucun point n'a été laissé de côté.
+Vous trouverez le diagramme UML en suivant ce lien:
+https://drive.google.com/file/d/1CkHD65Q93xvVYgRLrcPZ4Mz5fz1hW4tn/view?usp=sharing
 
 
 # Traitements
@@ -21,15 +23,14 @@ pandoc --toc -s -o questionnaire.html questionnaire.txt
 
 ## Quelle est la classe du traitement choisi ?
 
-J'ai quelques idées, mais sans certitudes sur l'originalité de ces dernières. Par exemple: calculer la moyenne des
-valeurs ou la moyenne des valeurs par position.
-J'ai pensé aussi à générer un graphique à partir des données comme nous l'avions fait en TP au début de l'UE.
+-Moyenne : calcul de la moyenne des valeurs des positions.
+-MoyenneParPosition : calcul de la moyenne des valeurs des positions par position.
 
 
 ## Pourquoi avoir fait de traitement une classe abstraite et non une interface ?
 
 Pour pouvoir factoriser un maximum de code concernant les traitements et pouvoir imposer certaines méthodes à ses
-sous-classes.
+sous-classes car elles ne pourront pas être redéfinies par ces dernières.
 Cela permet également de lui déléguer la responsabilité des traitements en faisant appel à ses méthodes concrètes.
 
 
@@ -49,7 +50,8 @@ réaliseront les traitements concrets.
 ## Est-ce que de faire de Traitement une classe abstraite est vraiment logique ici ?
 
 Oui, pour toutes les raison évoquées ci-dessus: on évite de dupliquer du code, on s'assure d'avoir une gestion
-commune des traitements, on impose à chaque traitement des méthodes communes...
+commune des traitements, on impose à chaque traitement des méthodes communes... Cette classe est la pierre angulaire
+de l'architecture choisie. C'est elle qui va déléguer les traitements à ses sous-classes.
 
 
 ## Pour le traitement Normaliseur, quels autres traitements avez-vous utilisés et comment ?
@@ -64,7 +66,7 @@ les données aient subies les différents traitements avant de pouvoir les norma
 
 ## Quelles modifications avez-vous été obligés de faire sur la classe Position ?
 
-Nous avons été obligé de surcharger equals() qui nous permet de comparer les valeurs logiques des éléments que nous
+Nous avons été obligé de redéfinir equals() qui nous permet de comparer les valeurs logiques des éléments que nous
 estimons représentatifs de 2 objets pour pouvoir dire qu'ils sont équivalents. Sans cela, nous ne faisons que
 comparer leurs valeurs physiques (adresse en mémoire physique) qui sont nécessairement différentes car chaque
 Position est instanciée avec le mot-clé "new" qui créé une nouvelle adresse en mémoire.
@@ -72,19 +74,26 @@ Position est instanciée avec le mot-clé "new" qui créé une nouvelle adresse 
 
 # Remarques sur Swing
 
-...
+C'est un outil très intéressant pour créer des interfaces graphiques. Il est nettement plus confortable d'écrire les
+données avec cette interface que de le faire à la main.
+En ajoutant seulement un bouton pour sélectionner le type de fichier à écrire, nous pourrions conserver la même
+interface pour tous les types de fichiers. Nous n'aurions alors pas grand chose à ajouter au code pour générer le
+fichier de notre choix.
 
 
 # Remarques sur l'Introspection
 
 C'est absolument génial! XD
+Dans un langage à typage fort comme java, c'est un outil très pratique qui permet de créer des objets sans
+connaître à l'avance leur type. Dans le cas de notre projet, cela nous permet de créer n'importe quel type de
+traitement.
 
 
 # Remarques sur XML
 
 ## Lecture d'un document XML
 
-D'une simplicité déconcertante avec JDOM + la DTD. J'ai rencontré initialement des difficultés car mon chemin absolu
+D'une simplicité déconcertante avec JDOM2 + la DTD. J'ai rencontré initialement des difficultés car mon chemin absolu
 comportait des dossiers mal formattés (espaces et accents). Une fois le chemin corrigé, tout s'est parfaitement
 déroulé.
 
@@ -100,15 +109,29 @@ toutes les valeurs par position, mais il était plus simple de le lire (et de le
 
 - Ajout d'une classe abstraite ExtractionSourceAbstraite : permet de factoriser une partie du code
 - Ajout d'une classe ExtractionTxtT1 : permet d'extraire les données d'un fichier texte de type 1
-- Ajout d'une classe ExtractionTxtT2 : permet d'extraire les données d'un fichier texte de type 1
+- Ajout d'une classe ExtractionTxtT2 : permet d'extraire les données d'un fichier texte de type 2
+- Ajout d'une classe ExtractionXmlDtd2 : permet d'extraire les données d'un fichier xml formalisé avec la dtd2
 Il aurait été possible de faire l'extraction différemment, par exemple en définissant une classe d'Extraction de données
 plus générale qui disposeraient de méthodes spécifiques pour extraire les données en fonction du type de fichier et de
 son format (ex: txt type 1 ou txt type 2).
+- Arrêt du programme en cas de détection de Cycle en étendant la classe RuntimeException. Nous ne pouvons pas laisser le
+programme continuer si une telle exception venait à se produire. Nous devons également la lever dans la classe abstraite
+Traitement pour nous assurer qu'elle soit toujours levée quelle que soit l'implémentation faite dans les sous-classes.
+- Passer mes poignées en final pour m'assurer qu'elles ne puissent pas être attachées à d'autres objets après leur
+instanciation.
 
 
 # Critiques de l'architecture proposée et améliorations possibles
 
-...
+C'est une architecture très intéressante qui permet de factoriser un maximum de code et de chaîner des traitements de
+façon très simple. Cependant, il est possible de l'améliorer en ajoutant un Traitement qui enregistrerai les
+traitements réalisés (comme je le fais dans ExempleAnalyse) pour pouvoir les réutiliser plus tard. Il serait également
+possible d'ajouter aisément la possibilité via l'interface graphique de Swing de choisir le type de fichier à générer,
+et pourquoi pas un champs permettant de saisir le nom du fichier à générer.
+Une interface Swing pourrait également être ajoutée pour générer un fichier texte contenant les chaînes de traitements
+à réaliser.
+Nous aurions pu également faire des packages pour mieux organiser notre code, même si cela n'est pas nécessaire pour
+le bon fonctionnement de notre programme.
 
 
 # Difficultés rencontrées
@@ -116,5 +139,10 @@ son format (ex: txt type 1 ou txt type 2).
 Il m'a fallu un certain temps pour réaliser le Normaliseur qui est le premier traitement où nous devons changer de
 façon de procéder puisqu'il est réalisé en 2 fois. Je n'ai pas terminé et quelque chose me dit que le plus dur reste à
 venir.
+Le diagramme UML a également été très long à réaliser. Je n'y ai pas indiqué toutes les dépendances et les associations
+pour une question de lisibilité.
+Bien que l'outil soit très puissant, j'ai encore du mal à m'approprier complètement Swing, notamment dans la
+compréhension des différents listeners.
+J'ai bloqué un moment sur le paramètre env de la méthode analyserTraitement car je ne comprenais pas pourquoi il était
+là. J'ai fini par comprendre son utilité à la fin en réalisant la partie facultative du sujet.
 
-J'ai du mal à comprendre le but de l'Analyseur.

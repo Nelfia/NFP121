@@ -10,13 +10,13 @@ import java.io.IOException;
 
 /** Classe chargée de l'extraction des données d'une source fichier format .xml respectant la DTD donnees2.dtd */
 public class ExtractionXmlDtd2 extends ExtractionSourceAbstraite {
-    private final Document DOCUMENT;
+    private final Document document;
 
     public ExtractionXmlDtd2(String nomDocument) {
         super(nomDocument);
         SAXBuilder sxb = new SAXBuilder();
         try {
-            this.DOCUMENT = sxb.build(new File(nomDocument));
+            this.document = sxb.build(new File(nomDocument));
         } catch (IOException e) {
             System.out.println("Erreur d'entrée/sortie : " + e);
             throw new RuntimeException(e);
@@ -31,11 +31,11 @@ public class ExtractionXmlDtd2 extends ExtractionSourceAbstraite {
         try {
             Position pos;
             double valeur;
-            for (Element e: this.DOCUMENT.getDescendants(new ElementFilter("donnee"))){
+            for (Element e: this.document.getDescendants(new ElementFilter("donnee"))){
                 pos = new Position(e.getAttribute("x").getIntValue(), e.getAttribute("y").getIntValue());
                 for (Element val: e.getDescendants(new ElementFilter("valeur"))){
                     valeur = Double.parseDouble(val.getText());
-                    this.getDonnees().traiter(pos, valeur);
+                    this.getDonneesExtraites().traiter(pos, valeur);
                 }
             }
         } catch (DataConversionException e) {

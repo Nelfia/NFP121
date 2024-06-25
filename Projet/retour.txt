@@ -9,12 +9,12 @@ Questionnaire :
 
 Code :
 
-* Donnees : pourquoi DONNEES en majuscules ?
-* Extraction* : setDonnees -> addDonnee ?
+* Donnees : pourquoi DONNEES en majuscules ? OK
+* Extraction* : setDonnees -> addDonnee ? OK
 * GenererTxtT1 :
-    - Pourquoi MouseListener et pas ActionListener ?
-    - Pourquoi un seul Listener et pas plusieurs ?
-    - Ceci était prévu dans SaisiesSwing.
-* SommeParPosition : if peu lisible.
+    - Pourquoi MouseListener et pas ActionListener ? OK
+    - Pourquoi un seul Listener et pas plusieurs ? OK
+    - Ceci était prévu dans SaisiesSwing. OK
+* SommeParPosition : if peu lisible. OK
 * TraitementBuilder :
-    - analyserTraitement : le if est inutile.
+    - analyserTraitement : le if est inutile. OK

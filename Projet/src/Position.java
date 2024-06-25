@@ -2,8 +2,8 @@ import java.util.Objects;
 
 /** Définir une position.  */
 public class Position {
-	private int x;
-	private int y;
+	private final int x;
+	private final int y;
 
 	public Position(int x, int y) {
 		this.x = x;

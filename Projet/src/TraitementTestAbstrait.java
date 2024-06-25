@@ -77,7 +77,6 @@ public abstract class TraitementTestAbstrait {
 		nb = testerChainageLot("lot2", nb, transmission, conservatif);
 	}
 
-
 	static protected class Dernier extends Traitement {
 		protected int nbDonnees;
 		protected Position position;

@@ -9,24 +9,31 @@ import java.util.Map;
 
 public class SommeParPosition extends Traitement {
 
-	private Map<Position, Double> positions;
+	private final Map<Position, Double> sommeParPositions;
 
     public SommeParPosition() {
-        positions = new HashMap<>();
+        sommeParPositions = new HashMap<>();
+    }
+
+    public Map<Position, Double> getSommeParPositions() {
+        return sommeParPositions;
     }
 
     @Override
     public void traiter(Position position, double valeur) {
-        if(positions.containsKey(position)) positions.put(position, positions.get(position) + valeur);
-        else positions.put(position, valeur);
+        if(sommeParPositions.containsKey(position)) {
+            sommeParPositions.put(position, sommeParPositions.get(position) + valeur);
+        } else {
+            sommeParPositions.put(position, valeur);
+        }
         super.traiter(position, valeur);
     }
 
     @Override
     protected void gererFinLotLocal(String nomLot) {
         System.out.println(this.getClass().getName() + " " + nomLot + " :");
-        for (Position key : positions.keySet()) {
-            System.out.println("\t - " + key + " -> " + positions.get(key));
+        for (Position key : sommeParPositions.keySet()) {
+            System.out.println("\t - " + key + " -> " + sommeParPositions.get(key));
         }
         System.out.println("Fin " + this.getClass().getName());
     }

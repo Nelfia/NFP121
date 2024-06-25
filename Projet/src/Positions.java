@@ -10,37 +10,37 @@ import static java.util.Collections.frequency;
   */
 public class Positions extends PositionsAbstrait {
 
-    private final List<Position> POSITIONS;
+    private final List<Position> positions;
 
     public Positions(){
-        this.POSITIONS = new ArrayList<>();
+        this.positions = new ArrayList<>();
     }
 
     @Override
     public Position position(int indice) {
-        return POSITIONS.get(indice);
+        return positions.get(indice);
     }
 
     @Override
     public int nombre() {
-        return POSITIONS.size();
+        return positions.size();
     }
 
     @Override
     public int frequence(Position position) {
-        return frequency(this.POSITIONS, position);
+        return frequency(this.positions, position);
     }
 
     @Override
     public void traiter(Position position, double valeur) {
-        this.POSITIONS.add(position);
+        this.positions.add(position);
         super.traiter(position, valeur);
     }
 
     @Override
     protected void gererFinLotLocal(String nomLot) {
         System.out.println(this.getClass().getName() + " " + nomLot + " :");
-        for(Position pos: this.POSITIONS) {
+        for(Position pos: this.positions) {
             System.out.println("\t - " + pos);
         }
         System.out.println("Fin " + this.getClass().getName());

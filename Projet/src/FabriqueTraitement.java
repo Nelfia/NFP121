@@ -24,5 +24,6 @@ public interface FabriqueTraitement {
 	Max max();
 	Normaliseur normaliseur(double debut, double fin);
 	GenerateurXML generateurXML(String nomFichier) throws IOException, JDOMException;
-
+	Moyenne moyenne();
+	MoyenneParPosition moyenneParPosition();
 }

@@ -5,7 +5,7 @@
   */
 public class SupprimerPlusGrand extends Traitement {
 
-    private double seuil;
+    private final double seuil;
 
     public SupprimerPlusGrand(double seuil) {
         this.seuil = seuil;
@@ -16,4 +16,8 @@ public class SupprimerPlusGrand extends Traitement {
         if(valeur < seuil) super.traiter(position, valeur);
     }
 
+    @Override
+    protected String toStringComplement() {
+        return "seuil = " + this.seuil;
+    }
 }

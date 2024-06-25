@@ -21,7 +21,7 @@ public class ExtractionTxtT1 extends ExtractionSourceAbstraite {
                 int x = Integer.parseInt(mots[0]);
                 int y = Integer.parseInt(mots[1]);
                 double valeur = Double.parseDouble(mots[3]);
-                this.setDonnees(x, y, valeur);
+                this.addDonnee(x, y, valeur);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -12,6 +12,11 @@
         <valeur>2.0</valeur>
       </position>
     </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>8.0</valeur>
+      </position>
+    </donnee>
   </lot>
   <lot name="donnees.txt">
     <donnee>
@@ -129,8 +134,59 @@
       </position>
     </donnee>
   </lot>
-  <lot name="donnees-erreurs" />
-  <lot name="Données de Swing">
+  <lot name="donnees-erreurs.txt">
+    <donnee>
+      <position x="7" y="2">
+        <valeur>3.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="3" y="1">
+        <valeur>0.5</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="3">
+        <valeur>1.5</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>4.2</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="2">
+        <valeur>5.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>6.3</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>1.6</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>0.8</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="1" y="1">
+        <valeur>1.0</valeur>
+      </position>
+    </donnee>
+    <donnee>
+      <position x="7" y="2">
+        <valeur>5.0</valeur>
+      </position>
+    </donnee>
+  </lot>
+  <lot name="donneesGenereesParSwing.txt">
     <donnee>
       <position x="2" y="4">
         <valeur>6.0</valeur>

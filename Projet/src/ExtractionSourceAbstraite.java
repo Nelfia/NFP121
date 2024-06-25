@@ -5,22 +5,22 @@
  */
 
 abstract public class ExtractionSourceAbstraite {
-    private final String NOM_FICHIER;
-    private final Donnees DONNEES;
+    private final String nomFichier;
+    private final Donnees donnees;
 
     public ExtractionSourceAbstraite(String nomDocument){
-        this.NOM_FICHIER = nomDocument;
-        this.DONNEES = new Donnees();
+        this.nomFichier = nomDocument;
+        this.donnees = new Donnees();
     }
 
     /** Obtenir le nom de la source */
     public final String getNomFichier() {
-        return this.NOM_FICHIER;
+        return this.nomFichier;
     }
 
     /** Obtenir les données extraites de la source */
-    public final Donnees getDonnees() {
-        return this.DONNEES;
+    public final Donnees getDonneesExtraites() {
+        return this.donnees;
     }
 
     /**
@@ -29,9 +29,9 @@ abstract public class ExtractionSourceAbstraite {
      * @param y l'ordonnee extraite de la source
      * @param valeur la valeur à la Position donnée
      */
-    public final void setDonnees(int x, int y, double valeur) {
+    public final void addDonnee(int x, int y, double valeur) {
         Position position = new Position(x, y);
-        this.DONNEES.traiter(position, valeur);
+        this.donnees.traiter(position, valeur);
     }
 
     /** Obtenir l'abcisse (int), l'ordonnée (int) et la valeur(double). */

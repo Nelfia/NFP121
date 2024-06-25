@@ -5,10 +5,20 @@
   */
 public class Multiplicateur extends Traitement {
 
-    private double facteur;
+    private final double facteur;
 
     public Multiplicateur(double facteur) {
         this.facteur = facteur;
+    }
+
+    @Override
+    protected String toStringComplement() {
+        return "facteur = " + this.facteur;
+    }
+
+    @Override
+    protected void gererDebutLotLocal(String nomLot) {
+        super.gererDebutLotLocal(nomLot);
     }
 
     @Override

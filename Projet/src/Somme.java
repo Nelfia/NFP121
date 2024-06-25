@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNotNull;
   *
   * @author	Xavier Crégut <Prenom.Nom@enseeiht.fr>
   */
-
 public class Somme extends SommeAbstrait {
 
 	private double somme;
@@ -26,7 +25,12 @@ public class Somme extends SommeAbstrait {
 	}
 
 	@Override
-	public void gererFinLotLocal(String nomLot) {
+	protected void gererDebutLotLocal(String nomLot) {
+		super.gererDebutLotLocal(nomLot);
+	}
+
+	@Override
+	protected void gererFinLotLocal(String nomLot) {
 		System.out.println(nomLot + ": somme = " + this.somme());
 	}
 }
