@@ -157,22 +157,22 @@ public class ExempleAnalyse {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException {
-//		exemple1();
-//		exemple2("Somme 0 1 Positions 0 0");
-//
-//		String calculs = "Positions 0 1 Max 0 1 Somme 0 1 SommeParPosition 0";
-//		String generateur = "GenerateurXML 1 java.lang.String NOM--genere.xml";
-//		String traitement1 = generateur.replaceAll("NOM", "brut") + " 3"
-//			+ " " + calculs + " 0"
-//			+ " " + "SupprimerPlusPetit 1 double 0.0 1 SupprimerPlusGrand 1 double 10.0 2"
-//				+ " " + generateur.replaceAll("NOM", "valides") + " 0"
-//				+ " " + calculs + " 0"
-//			+ " " + "Normaliseur 2 double 0.0 double 100.0 2"
-//				+ " " + generateur.replaceAll("NOM", "normalisees") + " 0"
-//				+ " " + calculs + " 0";
-//
-//		exemple2(calculs + " 0");
-//		exemple2(traitement1);
+		exemple1();
+		exemple2("Somme 0 1 Positions 0 0");
+
+		String calculs = "Positions 0 1 Max 0 1 Somme 0 1 SommeParPosition 0";
+		String generateur = "GenerateurXML 1 java.lang.String NOM--genere.xml";
+		String traitement1 = generateur.replaceAll("NOM", "brut") + " 3"
+			+ " " + calculs + " 0"
+			+ " " + "SupprimerPlusPetit 1 double 0.0 1 SupprimerPlusGrand 1 double 10.0 2"
+				+ " " + generateur.replaceAll("NOM", "valides") + " 0"
+				+ " " + calculs + " 0"
+			+ " " + "Normaliseur 2 double 0.0 double 100.0 2"
+				+ " " + generateur.replaceAll("NOM", "normalisees") + " 0"
+				+ " " + calculs + " 0";
+
+		exemple2(calculs + " 0");
+		exemple2(traitement1);
 
 //		exemple3();
 //
