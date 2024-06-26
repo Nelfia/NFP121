@@ -40,7 +40,7 @@ public class GenerateurXML extends Traitement {
 
     @Override
     protected void gererDebutLotLocal(String nomLot) {
-        System.out.println("Début GenerateurXML " + nomLot);
+        System.out.println("Début GenerateurXML sur les données " + nomLot + ". Destination: " + this.documentName);
         Element lot = new Element("lot");
         lot.setAttribute("name", nomLot);
         this.lot = lot;
@@ -65,7 +65,7 @@ public class GenerateurXML extends Traitement {
             if (!dir.exists()) dir.mkdirs();
 
             sortie.output(this.document, fileWriter);
-            System.out.println("Fin GenerateurXML " + nomLot);
+            System.out.println("Fin traitement GenerateurXML. Fichier créé : " + this.documentName + " (source: " + nomLot + ")");
 
         } catch (IOException e) {
             throw new RuntimeException(e);

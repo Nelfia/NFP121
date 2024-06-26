@@ -110,7 +110,7 @@ public class TraitementBuilder {
 
 		for(int i = 0; i < nbTraitements; i++) {
 			Traitement t = analyserTraitement(in, env);
-			traitement.ajouterSuivants(t); // TODO: finir cette méthode
+			traitement.ajouterSuivants(t);
 		}
 		return traitement;
 	}

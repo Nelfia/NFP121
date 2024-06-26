@@ -19,7 +19,7 @@ public class Moyenne extends MoyenneAbstrait {
 
     @Override
     public double moyenne() {
-        return this.total.somme() / this.nbValeurs;
+        return moyenneArrondie2chiffresApresVirgule(this.total.somme() / this.nbValeurs);
     }
 
     @Override

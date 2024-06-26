@@ -107,7 +107,9 @@ toutes les valeurs par position, mais il était plus simple de le lire (et de le
 
 # Principaux choix faits
 
-- Ajout d'une classe abstraite ExtractionSourceAbstraite : permet de factoriser une partie du code
+- Ajout d'une classe abstraite ExtractionSourceAbstraite : permet de factoriser une partie du code. J'aurai pu
+renvoyer directement les données 'pures' en retournant this.donnees.getDonnees() dans la méthode extraireDonnees(). Une
+utilisation future pourrait préférer ce type, j'ai donc choisi de ne pas le faire.
 - Ajout d'une classe ExtractionTxtT1 : permet d'extraire les données d'un fichier texte de type 1
 - Ajout d'une classe ExtractionTxtT2 : permet d'extraire les données d'un fichier texte de type 2
 - Ajout d'une classe ExtractionXmlDtd2 : permet d'extraire les données d'un fichier xml formalisé avec la dtd2
@@ -125,7 +127,7 @@ instanciation.
 
 C'est une architecture très intéressante qui permet de factoriser un maximum de code et de chaîner des traitements de
 façon très simple. Cependant, il est possible de l'améliorer en ajoutant un Traitement qui enregistrerai les
-traitements réalisés (comme je le fais dans ExempleAnalyse) pour pouvoir les réutiliser plus tard. Il serait également
+traitements réalisés (comme je le fais dans ExempleAnalyse2) pour pouvoir les réutiliser plus tard. Il serait également
 possible d'ajouter aisément la possibilité via l'interface graphique de Swing de choisir le type de fichier à générer,
 et pourquoi pas un champs permettant de saisir le nom du fichier à générer.
 Une interface Swing pourrait également être ajoutée pour générer un fichier texte contenant les chaînes de traitements

@@ -12,11 +12,6 @@
         <valeur>2.0</valeur>
       </position>
     </donnee>
-    <donnee>
-      <position x="1" y="2">
-        <valeur>8.0</valeur>
-      </position>
-    </donnee>
   </lot>
   <lot name="donnees.txt">
     <donnee>

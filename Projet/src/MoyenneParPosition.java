@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,8 +35,13 @@ public class MoyenneParPosition extends Traitement {
         for (Position key : this.sommeParPosition.getSommeParPositions().keySet()) {
             double somme = this.sommeParPosition.getSommeParPositions().get(key);
             int frequence = this.positions.frequence(key);
-            this.moyenneParPosition.put(key, somme / frequence);
+            double moyenne = moyenneArrondie2chiffresApresVirgule(somme / frequence);
+            this.moyenneParPosition.put(key, moyenne);
             System.out.println("\t - " + key + " -> " + this.moyenneParPosition.get(key));
         }
+    }
+
+    private double moyenneArrondie2chiffresApresVirgule(double valeur) {
+        return new BigDecimal(valeur).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 }

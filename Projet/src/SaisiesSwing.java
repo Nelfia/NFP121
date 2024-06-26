@@ -19,7 +19,7 @@ public class SaisiesSwing extends JPanel {
     private String fileContent;
     private int numeroOrdre;
     final private JTextField abcisse = new JTextField(1);
-    final private JTextField ordonnnee = new JTextField(1); // TODO: à vérifier
+    final private JTextField ordonnnee = new JTextField(1);
     final private JTextField valeur = new JTextField(1);
 
     public SaisiesSwing(String nomFichierSortie) {
