@@ -123,6 +123,9 @@ programme continuer si une telle exception venait à se produire. Nous devons é
 Traitement pour nous assurer qu'elle soit toujours levée quelle que soit l'implémentation faite dans les sous-classes.
 - Passer mes poignées en final pour m'assurer qu'elles ne puissent pas être attachées à d'autres objets après leur
 instanciation.
+-Ajout d'un traitement supplémentaire dans le Normaliseur (Multiplicateur) pour obtenir le min. L'opération n'est pas
+vraiment ni nécessaire ni optimale, mais elle permet de respecter la chaîne de responsabilité et de montrer que nous
+pouvons chaîner autant de traitements que nous le souhaitons.
 
 
 # Critiques de l'architecture proposée et améliorations possibles
