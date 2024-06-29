@@ -45,7 +45,7 @@ public class SaisiesSwing extends JPanel {
         quatriemeLigne.add(btnTerminer);
 
         // Construction du Layout Manager
-        this.setLayout(new GridLayout(4, 3));
+        this.setLayout(new GridLayout(4, 3, 2,2));
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         this.add(premiereLigne);
         this.add(deuxiemeLigne);
@@ -137,7 +137,7 @@ public class SaisiesSwing extends JPanel {
         JFrame fenetre = new JFrame("Saisie données");
         SaisiesSwing saisiesSwing = new SaisiesSwing(nomFichierSortie);
         fenetre.getContentPane().add(saisiesSwing);
-        fenetre.setSize(300, 180);
+        fenetre.setSize(300, 200);
         fenetre.setLocation(800, 300);
         fenetre.dispose();
         fenetre.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

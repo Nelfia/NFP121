@@ -85,29 +85,29 @@ public class ExempleAnalyse {
 		// Traiter les autres sources de données : "donnees.txt", etc.
 
 		// Extraction du fichier donnees.txt
-		ExtractionTxtT1 source = new ExtractionTxtT1("src/donnees.txt");
-		source.extraireDonnees();
-		analyseur.traiter(source.getDonneesExtraites().getDonnees(), "donnees.txt");
-
-		// Extraction du fichier donnees2-f2.txt
-		ExtractionTxtT2 source2 = new ExtractionTxtT2("src/donnees2-f2.txt");
-		source2.extraireDonnees();
-		analyseur.traiter(source2.getDonneesExtraites().getDonnees(), "donnees2-f2.txt");
-
-		// Extraction du fichier donnees2.xml
-		ExtractionXmlDtd2 source3 = new ExtractionXmlDtd2("src/donnees2.xml");
-		source3.extraireDonnees();
-		analyseur.traiter(source3.getDonneesExtraites().getDonnees(), "donnees2.xml");
-
-		// Extraction du fichier donnees-erreurs.txt
-		ExtractionTxtT2 source4 = new ExtractionTxtT2("src/donnees-erreurs.txt");
-		source4.extraireDonnees();
-		analyseur.traiter(source4.getDonneesExtraites().getDonnees(), "donnees-erreurs.txt");
-
-		// Extraction des données du nouveau fichier
-		ExtractionTxtT1 source5 = new ExtractionTxtT1("src/fichiersGeneres/donneesGenereesParSwing.txt");
-		source5.extraireDonnees();
-		analyseur.traiter(source5.getDonneesExtraites().getDonnees(), "donneesGenereesParSwing.txt");
+//		ExtractionTxtT1 source = new ExtractionTxtT1("src/donnees.txt");
+//		source.extraireDonnees();
+//		analyseur.traiter(source.getDonneesExtraites().getDonnees(), "donnees.txt");
+//
+//		// Extraction du fichier donnees2-f2.txt
+//		ExtractionTxtT2 source2 = new ExtractionTxtT2("src/donnees2-f2.txt");
+//		source2.extraireDonnees();
+//		analyseur.traiter(source2.getDonneesExtraites().getDonnees(), "donnees2-f2.txt");
+//
+//		// Extraction du fichier donnees2.xml
+//		ExtractionXmlDtd2 source3 = new ExtractionXmlDtd2("src/donnees2.xml");
+//		source3.extraireDonnees();
+//		analyseur.traiter(source3.getDonneesExtraites().getDonnees(), "donnees2.xml");
+//
+//		// Extraction du fichier donnees-erreurs.txt
+//		ExtractionTxtT2 source4 = new ExtractionTxtT2("src/donnees-erreurs.txt");
+//		source4.extraireDonnees();
+//		analyseur.traiter(source4.getDonneesExtraites().getDonnees(), "donnees-erreurs.txt");
+//
+//		// Extraction des données du nouveau fichier
+//		ExtractionTxtT1 source5 = new ExtractionTxtT1("src/fichiersGeneres/donneesGenereesParSwing.txt");
+//		source5.extraireDonnees();
+//		analyseur.traiter(source5.getDonneesExtraites().getDonnees(), "donneesGenereesParSwing.txt");
 	}
 
 	/** Exemple qui devrait déclencher une CycleException. */

@@ -4,7 +4,7 @@ import java.io.IOException;
 
 /** Classe chargée de l'extraction des données d'une source fichier format .txt de type 1:
  *  Chaque ligne est organisée de la façon suivante: une abscisse (entier), une ordonnée (entier), un numéro d’ordre
- *  (ignoré) et une valeur réelle (double).*/
+ *  (ignoré) et une valeur réelle (double), séparés par des blancs.*/
 public class ExtractionTxtT1 extends ExtractionSourceAbstraite {
 
     public ExtractionTxtT1(String nomFichier) {

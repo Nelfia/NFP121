@@ -32,8 +32,8 @@ public class SommeParPosition extends Traitement {
     @Override
     protected void gererFinLotLocal(String nomLot) {
         System.out.println(this.getClass().getName() + " " + nomLot + " :");
-        for (Position key : sommeParPositions.keySet()) {
-            System.out.println("\t - " + key + " -> " + sommeParPositions.get(key));
+        for (Map.Entry<Position, Double> entry : sommeParPositions.entrySet()) {
+            System.out.println("\t - " + entry.getKey() + " -> " + entry.getValue());
         }
         System.out.println("Fin " + this.getClass().getName());
     }

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * MoyenneParPosition calcule la moyenne des valeurs par position.
+ * MoyenneParPosition calcule la moyenne position de toutes les données lues quel que soit le lot.
  * @author	Quiterie JULIEN <Prenom.Nom.auditeur@lecnam.net>
  */
 public class MoyenneParPosition extends Traitement {
@@ -41,6 +41,7 @@ public class MoyenneParPosition extends Traitement {
         }
     }
 
+    /** Moyenne arrondie à 2 chiffres après la virgule */
     private double moyenneArrondie2chiffresApresVirgule(double valeur) {
         return new BigDecimal(valeur).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }

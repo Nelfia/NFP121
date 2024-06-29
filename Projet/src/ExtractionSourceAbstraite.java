@@ -1,5 +1,5 @@
 /**
- * ExtractionSourceAbstraite spécifie l'extraction des éléments d'un fichier.
+ * ExtractionSourceAbstraite spécifie l'extraction des données à partir d'un fichier quelconque.
  *
  * @author	Quiterie JULIEN <Prenom.Nom.auditeur@lecnam.net>
  */

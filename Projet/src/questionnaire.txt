@@ -14,7 +14,7 @@ pandoc --toc -s -o questionnaire.html questionnaire.txt
 # Points non traités du sujet
 
 Aucun point n'a été laissé de côté.
-Vous trouverez le diagramme UML en suivant ce lien:
+Vous trouverez le diagramme UML dans le dossier asset : diagrammeUML.drawio.svg ou en suivant ce lien :
 https://drive.google.com/file/d/1CkHD65Q93xvVYgRLrcPZ4Mz5fz1hW4tn/view?usp=sharing
 
 
@@ -23,14 +23,14 @@ https://drive.google.com/file/d/1CkHD65Q93xvVYgRLrcPZ4Mz5fz1hW4tn/view?usp=shari
 
 ## Quelle est la classe du traitement choisi ?
 
--Moyenne : calcul de la moyenne des valeurs des positions.
--MoyenneParPosition : calcul de la moyenne des valeurs des positions par position.
+-Moyenne : calcul de la moyenne des valeurs des positions par lot.
+-MoyenneParPosition : calcul de la moyenne par position des valeurs quel que soit le lot .
 
 
 ## Pourquoi avoir fait de traitement une classe abstraite et non une interface ?
 
-Pour pouvoir factoriser un maximum de code concernant les traitements et pouvoir imposer certaines méthodes à ses
-sous-classes car elles ne pourront pas être redéfinies par ces dernières.
+Pour pouvoir factoriser un maximum de code concernant les traitements et pouvoir imposer certaines méthodes et attributs
+à ses sous-classes car elles ne pourront pas être redéfinies par ces dernières.
 Cela permet également de lui déléguer la responsabilité des traitements en faisant appel à ses méthodes concrètes.
 
 
@@ -56,9 +56,11 @@ de l'architecture choisie. C'est elle qui va déléguer les traitements à ses s
 
 ## Pour le traitement Normaliseur, quels autres traitements avez-vous utilisés et comment ?
 
-- Donnees : pour enregistrer toutes les données dans une List
+- Donnees : pour enregistrer toutes les données dans une List par lot.
 - Max : pour récupérer la valeur maximum et pour récupérer la valeur minimum.
+- Multiplicateur auquel j'ai chaîné le traitement Max pour obtenir le min.
 
+J'instancie tous les traitements dans le constructeur sauf les données puisqu'on souhaite les normaliser par lot.
 On les utilise dans la méthode traiter pour pouvoir appliquer un premier traitement sur l'intégralité des données
 lues. Puis on récupère les résultats de ces traitement dans GestionFinDeLotLocal car nous avons besoin que toutes
 les données aient subies les différents traitements avant de pouvoir les normaliser.
@@ -77,16 +79,16 @@ Position est instanciée avec le mot-clé "new" qui créé une nouvelle adresse 
 C'est un outil très intéressant pour créer des interfaces graphiques. Il est nettement plus confortable d'écrire les
 données avec cette interface que de le faire à la main.
 En ajoutant seulement un bouton pour sélectionner le type de fichier à écrire, nous pourrions conserver la même
-interface pour tous les types de fichiers. Nous n'aurions alors pas grand chose à ajouter au code pour générer le
-fichier de notre choix.
+interface pour tous les types de fichiers. Nous n'aurions alors pas grand chose à ajouter au code pour générer le type
+de fichier de notre choix.
 
 
 # Remarques sur l'Introspection
 
 C'est absolument génial! XD
-Dans un langage à typage fort comme java, c'est un outil très pratique qui permet de créer des objets sans
-connaître à l'avance leur type. Dans le cas de notre projet, cela nous permet de créer n'importe quel type de
-traitement.
+Dans un langage à typage fort comme java, c'est un outil très pratique qui permet de créer des objets ou de récupérer
+les méthodes et attributs d'objets sans connaître à l'avance leur type. Dans le cas de notre projet, cela nous permet
+de créer n'importe quel type de traitement supplémentaire sans avoir à maintenir une liste de tous les traitements.
 
 
 # Remarques sur XML
@@ -138,13 +140,15 @@ le bon fonctionnement de notre programme.
 
 # Difficultés rencontrées
 
-Il m'a fallu un certain temps pour réaliser le Normaliseur qui est le premier traitement où nous devons changer de
-façon de procéder puisqu'il est réalisé en 2 fois. Je n'ai pas terminé et quelque chose me dit que le plus dur reste à
-venir.
-Le diagramme UML a également été très long à réaliser. Je n'y ai pas indiqué toutes les dépendances et les associations
+- Il m'a fallu un certain temps pour réaliser le Normaliseur qui est le premier traitement où nous devons changer de
+façon de procéder puisqu'il est réalisé en 2 fois. J'ai finalement choisi de n'enregistrer les données que par lot comme
+l'indique le commentaire du normaliseur et d'ajouter un traitement supplémentaire Multiplicateur auquel j'ai chaîné le
+traitement Max afin d'obtenir le min.
+- Le diagramme UML a également été très long à réaliser. Je n'y ai pas indiqué toutes les dépendances et les associations
 pour une question de lisibilité.
-Bien que l'outil soit très puissant, j'ai encore du mal à m'approprier complètement Swing, notamment dans la
-compréhension des différents listeners.
-J'ai bloqué un moment sur le paramètre env de la méthode analyserTraitement car je ne comprenais pas pourquoi il était
+- Bien que l'outil soit très puissant, j'ai encore du mal à m'approprier complètement Swing, mais documentation à l'appui
+et pratique me permettent de produire le résultat attendu.
+- J'ai bloqué un moment sur le paramètre env de la méthode analyserTraitement car je ne comprenais pas pourquoi il était
 là. J'ai fini par comprendre son utilité à la fin en réalisant la partie facultative du sujet.
+- Je n'ai pas saisi l'intérêt du fichier donnees-erreurs.txt.
 

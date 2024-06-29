@@ -1,13 +1,17 @@
 /**
- * Moyenne calcule la moyenne des valeurs reçues.
+ * Moyenne calcule la moyenne de toutes les valeurs lues par lot.
  */
 public class Moyenne extends MoyenneAbstrait {
-    private final Somme total;
+    private Somme total;
     private int nbValeurs;
 
-    public Moyenne() {
+    public Moyenne() {}
+
+    @Override
+    protected void gererDebutLotLocal(String nomLot) {
         this.total = new Somme();
         this.nbValeurs = 0;
+        System.out.println("Début Moyenne sur les données " + nomLot);
     }
 
     @Override

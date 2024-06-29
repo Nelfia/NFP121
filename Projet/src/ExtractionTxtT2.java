@@ -3,8 +3,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /** Classe chargée de l'extraction des données d'une source fichier format .txt de type 2:
- *  Chaque ligne est organisée de la façon suivante: un identifiant (ignoré), une abscisse (entier), une ordonnée (entier),
- * un mot (ignoré), une valeur (réel) et, enfin, une lettre (ignorée).*/
+ *  Chaque ligne est organisée de la façon suivante, séparés par des blancs: un identifiant (ignoré), une abscisse
+ *  (entier), une ordonnée (entier), un mot (ignoré), une valeur (réel) et, enfin, une lettre (ignorée).*/
 public class ExtractionTxtT2 extends ExtractionSourceAbstraite{
 
     public ExtractionTxtT2(String nomDocument) {

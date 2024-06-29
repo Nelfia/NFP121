@@ -9,7 +9,7 @@ public class Max extends Traitement {
     private double max;
 
     public Max(){
-        this.max = 0;
+        this.max = -Double.MAX_VALUE;
     }
 
     public double getMax() {
